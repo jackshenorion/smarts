@@ -23,3 +23,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+/Users/jshen/Documents/workspace/smarts/out
+/Users/jshen/Documents/workspace/smarts/.gradle
