@@ -25,5 +25,8 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jersey')
 	compile('org.springframework.boot:spring-boot-starter-web')
+
+	compile "com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.8.8"
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
