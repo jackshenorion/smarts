@@ -2,7 +2,6 @@ package com.jackshenorion.smarts.util.ini;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import org.ini4j.BasicProfile;
 import org.ini4j.Ini;
 
 import java.util.List;
