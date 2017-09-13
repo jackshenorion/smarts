@@ -12,9 +12,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 public class CsvSqlitePojoGenerator {
     private String schemaContent;
@@ -63,28 +62,16 @@ public class CsvSqlitePojoGenerator {
     }
 
     public void generate() throws Exception {
-        String javaOutputDir = outputDir + "/java";
-        String template = IOUtil.readAndClose(new FileReader(templateFile));
-
-        VelocityEngine ve = new VelocityEngine();
-
-        ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
-        ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
-        ve.init();
-
-        Template t = ve.getTemplate("templates/hellovelocity.vm");
+        CsvSqlitePojoSchema schema = loadSchema();
+        Template t = createTemplate("templates/csv-sqlite-pojo-template.txt");
         VelocityContext ctx = new VelocityContext();
-        ctx.put("name", "velocity");
-        ctx.put("date", (new Date()).toString());
-
-        List temp = new ArrayList();
-        temp.add("1");
-        temp.add("2");
-        ctx.put("list", temp);
-
+        ctx.put("obj", schema);
         StringWriter sw = new StringWriter();
         t.merge(ctx, sw);
         System.out.println(sw.toString());
+        initDirectory(outputDir);
+        String filePath = outputDir + "/" + javaPkg + "/" + schema.getClassName() + ".java";
+        IOUtil.writeTextFile(filePath, sw.toString());
 
 //        initDirectory(javaOutputDir);
 
@@ -127,6 +114,49 @@ public class CsvSqlitePojoGenerator {
 //            System.out.println(filePath);
 //        }
 
+    }
+
+    private Template createTemplate(String templateFile) {
+        VelocityEngine ve = new VelocityEngine();
+        ve.setProperty(RuntimeConstants.RESOURCE_LOADER, "classpath");
+        ve.setProperty("classpath.resource.loader.class", ClasspathResourceLoader.class.getName());
+        ve.init();
+        return ve.getTemplate(templateFile);
+    }
+
+    private CsvSqlitePojoSchema loadSchema() {
+        return new CsvSqlitePojoSchema()
+                .setVersion("1.0.0")
+                .setDate(dateFormatter.format(date))
+                .setJavaPackage(javaPkg)
+                .setClassName("BiOmniCodeInfoSfc")
+                .setTableName("bi_omni_code_info_sfc")
+                .setProps(Arrays.asList(
+                        new CsvSqlitePojoProperty()
+                                .setName("code")
+                                .setIsNumber(false)
+                                .setCsvName("BI/Omni Code")
+                                .setSqliteName("CODE")
+                                .setGetter("getCode")
+                                .setSetter("setCode")
+                                .setType("String"),
+                        new CsvSqlitePojoProperty()
+                                .setName("name")
+                                .setIsNumber(false)
+                                .setCsvName("BI Name")
+                                .setSqliteName("NAME")
+                                .setGetter("getName")
+                                .setSetter("setName")
+                                .setType("String"),
+                        new CsvSqlitePojoProperty()
+                                .setName("pdrCat")
+                                .setIsNumber(true)
+                                .setCsvName("PDR Cat")
+                                .setSqliteName("PDR_CAT")
+                                .setGetter("getPdrCat")
+                                .setSetter("setPdrCat")
+                                .setType("double")
+                ));
     }
 
     private void initDirectory(String javaOutputDir) throws IOException {

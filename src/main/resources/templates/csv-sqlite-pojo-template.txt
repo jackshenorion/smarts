@@ -1,0 +1,61 @@
+// THIS CODE IS GENERATED. DO NOT MODIFY IT OR YOUR CHANGES WILL BE OVERWRITTEN AT SOME POINT.
+// VERSION ${obj.version}
+// DATE ${obj.date}
+package ${obj.javaPackage};
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.smartsgroup.lib.sqlite.SQLiteWrapper;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+
+@SQLiteWrapper.Table(name="${obj.tableName}")
+@JsonPropertyOrder({
+#foreach (${prop} in ${obj.props})
+"${prop.csvName}",
+#end
+})
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class ${obj.className} implements Serializable
+{
+#foreach (${prop} in ${obj.props})
+
+	@JsonProperty("${prop.csvName}")
+	@SQLiteWrapper.Column( notNull = false, name ="${prop.sqliteName}")
+	public ${prop.type} ${prop.name};
+#end
+
+#foreach (${prop} in ${obj.props})
+
+	public ${prop.type} ${prop.getter}() {
+		return ${prop.name};
+	}
+
+#if($prop.isNumber)
+	public void ${prop.setter}(String ${prop.name}) {
+        double ${prop.name}Double = 0;
+        try
+        {
+            ${prop.name}Double = Double.parseDouble( ${prop.name} );
+        }
+        catch ( NumberFormatException e )
+        {
+        }
+        this.${prop.name} = ${prop.name}Double;
+	}
+#else
+	public void ${prop.setter}(${prop.type} ${prop.name}) {
+		this.${prop.name} = ${prop.name};
+	}
+#end
+#end
+
+	@Override
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this);
+	}
+}
