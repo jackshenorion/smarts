@@ -1,6 +1,6 @@
-package com.jackshenorion.smarts.generator.impl;
+package com.jackshenorion.smarts.generator.sqlloader;
 
-public class CsvSqlitePojoProperty {
+public class SqlLoaderPojoProperty {
     private String name;
     private String type;
     private boolean isNumber;
@@ -13,7 +13,7 @@ public class CsvSqlitePojoProperty {
         return name;
     }
 
-    public CsvSqlitePojoProperty setName(String name) {
+    public SqlLoaderPojoProperty setName(String name) {
         this.name = name;
         return this;
     }
@@ -22,7 +22,7 @@ public class CsvSqlitePojoProperty {
         return type;
     }
 
-    public CsvSqlitePojoProperty setType(String type) {
+    public SqlLoaderPojoProperty setType(String type) {
         this.type = type;
         return this;
     }
@@ -31,7 +31,7 @@ public class CsvSqlitePojoProperty {
         return isNumber;
     }
 
-    public CsvSqlitePojoProperty setIsNumber(boolean number) {
+    public SqlLoaderPojoProperty setIsNumber(boolean number) {
         isNumber = number;
         return this;
     }
@@ -40,7 +40,7 @@ public class CsvSqlitePojoProperty {
         return csvName;
     }
 
-    public CsvSqlitePojoProperty setCsvName(String csvName) {
+    public SqlLoaderPojoProperty setCsvName(String csvName) {
         this.csvName = csvName;
         return this;
     }
@@ -49,7 +49,7 @@ public class CsvSqlitePojoProperty {
         return sqliteName;
     }
 
-    public CsvSqlitePojoProperty setSqliteName(String sqliteName) {
+    public SqlLoaderPojoProperty setSqliteName(String sqliteName) {
         this.sqliteName = sqliteName;
         return this;
     }
@@ -58,7 +58,7 @@ public class CsvSqlitePojoProperty {
         return setter;
     }
 
-    public CsvSqlitePojoProperty setSetter(String setter) {
+    public SqlLoaderPojoProperty setSetter(String setter) {
         this.setter = setter;
         return this;
     }
@@ -67,14 +67,14 @@ public class CsvSqlitePojoProperty {
         return getter;
     }
 
-    public CsvSqlitePojoProperty setGetter(String getter) {
+    public SqlLoaderPojoProperty setGetter(String getter) {
         this.getter = getter;
         return this;
     }
 
     @Override
     public String toString() {
-        return "CsvSqlitePojoProperty{" +
+        return "SqlLoaderPojoProperty{" +
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", isNumber=" + isNumber +

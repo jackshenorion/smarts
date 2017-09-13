@@ -1,7 +1,7 @@
 // THIS CODE IS GENERATED. DO NOT MODIFY IT OR YOUR CHANGES WILL BE OVERWRITTEN AT SOME POINT.
-// VERSION ${obj.version}
-// DATE ${obj.date}
-package ${obj.javaPackage};
+// VERSION ${version}
+// DATE ${date}
+package ${schema.javaPackage};
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,23 +13,27 @@ import java.io.Serializable;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 
-@SQLiteWrapper.Table(name="${obj.tableName}")
+#set($props = ${table.pojo.props})
+#set($className = ${table.pojo.className})
+#set($tableName = ${table.sqlite.tableName})
+
+@SQLiteWrapper.Table(name="${tableName}")
 @JsonPropertyOrder({
-#foreach (${prop} in ${obj.props})
+#foreach (${prop} in ${props})
 "${prop.csvName}",
 #end
 })
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ${obj.className} implements Serializable
+public class ${className} implements Serializable
 {
-#foreach (${prop} in ${obj.props})
+#foreach (${prop} in ${props})
 
 	@JsonProperty("${prop.csvName}")
 	@SQLiteWrapper.Column( notNull = false, name ="${prop.sqliteName}")
 	public ${prop.type} ${prop.name};
 #end
 
-#foreach (${prop} in ${obj.props})
+#foreach (${prop} in ${props})
 
 	public ${prop.type} ${prop.getter}() {
 		return ${prop.name};

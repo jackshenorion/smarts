@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- THIS CODE IS GENERATED. DO NOT MODIFY IT OR YOUR CHANGES WILL BE OVERWRITTEN AT SOME POINT. -->
+<!--  VERSION ${version} -->
+<!--  DATE ${date} -->
+
+#set($description = ${table.description})
+#set($delimiter = ${table.csv.delimiter})
+#set($doIgnoreRecord = ${table.csv.doIgnoreRecord})
+#set($ignoredRecordBy = ${table.csv.ignoredRecordBy})
+#set($ignoredRecordEnglish = ${table.csv.ignoredRecordEnglish})
+#set($midfix = ${table.csv.midfix})
+#set($format = ${table.csv.format})
+#set($pojoClassPath = "${schema.javaPackage}.${table.pojo.className}")
+#set($marketCode = ${schema.marketCode})
+#set($dbFile = "${table.sqlite.dbFile}")
+
+<process-config name="${description}">
+
+    <processNonTradingDays>true</processNonTradingDays>
+
+    <input name="csvIn" className="com.smartsgroup.connectors.hksql.input.HKStaticCsvInputStream">
+        <property name="fieldDelimiter">${delimiter}</property>
+#if (${doIgnoreRecord})
+        <property name="ignoreRecordBy">${ignoredRecordBy}</property>
+        <property name="ignoreRecordEnglish">${ignoredRecordEnglish}</property>
+#end
+        <property name="bean">${pojoClassPath}</property>
+        <optional>true</optional>
+        <filePattern>
+            <marketCode>${marketCode}</marketCode>
+            <midfix>${midfix}</midfix>
+            <format>${format}</format>
+        </filePattern>
+    </input>
+
+    <sequence input="csvIn" output="devNull">
+        <feedlet className="com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet">
+            <property name="dbFile">${dbFile}</property>
+            <property name="inputBean">${pojoClassPath}</property>
+            <property name="type">daily</property>
+            <property name="outputMarket">${marketCode}</property>
+        </feedlet>
+    </sequence>
+
+    <output name="devNull" className="com.smartsgroup.tools.convertfw.DevNullProcessOutput">
+        <filePattern>
+            <marketCode>${marketCode}</marketCode>
+            <midfix>sqldummy</midfix>
+            <format>fav</format>
+        </filePattern>
+    </output>
+
+</process-config>

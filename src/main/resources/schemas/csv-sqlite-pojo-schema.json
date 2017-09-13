@@ -1,0 +1,67 @@
+{
+  "marketCode": "dcass",
+  "javaPackage": "com.smartsgroup.connectors.hksql.feedlets.lookup",
+  "processInputClass": "com.smartsgroup.connectors.hksql.input.HKStaticCsvInputStream",
+  "feedletClass": "com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet",
+
+  "tables": [
+    {
+      "description": "Converts BI_Omni_Code_Info_SFC.csv to Sqlite",
+      "pojo": {
+        "className": "BiOmniCodeInfoSfc",
+        "props": [
+          {"name": "code", "isNumber": false, "csvName": "BI/Omni Code", "sqliteName": "CODE"},
+          {"name": "name", "isNumber": false, "csvName": "BI Name", "sqliteName": "NAME"},
+          {"name": "pdrCat", "isNumber": false, "csvName": "PDR Cat", "sqliteName": "PDR_CAT"}
+        ]
+      },
+      "sqlite": {
+        "dbFile": "bi_omni_code_info_sfc.sqlite",
+        "tableName": "bi_omni_code_info"
+      },
+      "csv": {
+        "delimiter": ",",
+        "doIgnoreRecord": true,
+        "ignoredRecordBy": "BI/Omni Code",
+        "ignoredRecordEnglish": "BI/Omni Code",
+        "midfix": ".BI_Omni_Code_Info_SFC_Sample",
+        "format": "csv"
+      },
+      "converter": {
+        "fileName": "hksql_loader_bi_omni_code_info_sfc.xml"
+      }
+    },
+    {
+      "description": "Converts EP_OI_SFC_Sample to Sqlite",
+      "pojo": {
+        "className": "EpOiSfc",
+        "props": [
+          {"name": "tradeDate", "isNumber": false, "csvName": "Trade Date", "sqliteName": "TRADE_DATE"},
+          {"name": "epCode", "isNumber": false, "csvName": "EP Code", "sqliteName": "EP_CODE"},
+          {"name": "epName", "isNumber": false, "csvName": "EP Name", "sqliteName": "EP_NAME"},
+          {"name": "productCode", "isNumber": false, "csvName": "Product Code", "sqliteName": "PRODUCT_CODE"},
+          {"name": "strike", "isNumber": false, "csvName": "Strike", "sqliteName": "STRIKE"},
+          {"name": "optionType", "isNumber": false, "csvName": "Option Type", "sqliteName": "OPTION_TYPE"},
+          {"name": "contractMonth", "isNumber": false, "csvName": "Contract Month", "sqliteName": "CONTRACT_MONTH"},
+          {"name": "epOiTotalLong", "isNumber": false, "csvName": "EP OI Total Long", "sqliteName": "EP_OI_TOTAL_LONG"},
+          {"name": "epOiTotalShort", "isNumber": false, "csvName": "EP OI Total Short", "sqliteName": "EP_OI_TOTAL_SHORT"}
+        ]
+      },
+      "sqlite": {
+        "dbFile": "ep_oi_sfc.sqlite",
+        "tableName": "ep_oi"
+      },
+      "csv": {
+        "delimiter": ",",
+        "doIgnoreRecord": true,
+        "ignoredRecordBy": "Trade Date",
+        "ignoredRecordEnglish": "Trade Date",
+        "midfix": ".EP_OI_SFC_Sample",
+        "format": "csv"
+      },
+      "converter": {
+        "fileName": "hksql_loader_ep_oi_sfc.xml"
+      }
+    }
+  ]
+}
