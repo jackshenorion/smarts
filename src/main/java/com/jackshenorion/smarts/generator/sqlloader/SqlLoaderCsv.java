@@ -4,9 +4,7 @@ public class SqlLoaderCsv {
     public String midfix;
     public String format;
     public String delimiter;
-    public boolean doIgnoreRecord;
-    public String ignoredRecordBy;
-    public String ignoredRecordEnglish;
+    public boolean ignoreHeaderLine;
 
     public String getMidfix() {
         return midfix;
@@ -35,42 +33,22 @@ public class SqlLoaderCsv {
         return this;
     }
 
-    public boolean isDoIgnoreRecord() {
-        return doIgnoreRecord;
+    public boolean isIgnoreHeaderLine() {
+        return ignoreHeaderLine;
     }
 
-    public SqlLoaderCsv setDoIgnoreRecord(boolean doIgnoreRecord) {
-        this.doIgnoreRecord = doIgnoreRecord;
-        return this;
-    }
-
-    public String getIgnoredRecordBy() {
-        return ignoredRecordBy;
-    }
-
-    public SqlLoaderCsv setIgnoredRecordBy(String ignoredRecordBy) {
-        this.ignoredRecordBy = ignoredRecordBy;
-        return this;
-    }
-
-    public String getIgnoredRecordEnglish() {
-        return ignoredRecordEnglish;
-    }
-
-    public SqlLoaderCsv setIgnoredRecordEnglish(String ignoredRecordEnglish) {
-        this.ignoredRecordEnglish = ignoredRecordEnglish;
+    public SqlLoaderCsv setIgnoreHeaderLine(boolean ignoreHeaderLine) {
+        this.ignoreHeaderLine = ignoreHeaderLine;
         return this;
     }
 
     @Override
     public String toString() {
         return "SqlLoaderCsv{" +
-                "delimiter='" + delimiter + '\'' +
-                ", doIgnoreRecord=" + doIgnoreRecord +
-                ", ignoredRecordBy='" + ignoredRecordBy + '\'' +
-                ", ignoredRecordEnglish='" + ignoredRecordEnglish + '\'' +
-                ", midfix='" + midfix + '\'' +
+                "midfix='" + midfix + '\'' +
                 ", format='" + format + '\'' +
+                ", delimiter='" + delimiter + '\'' +
+                ", ignoreHeaderLine=" + ignoreHeaderLine +
                 '}';
     }
 }

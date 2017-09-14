@@ -3,11 +3,11 @@
 <!--  VERSION ${version} -->
 <!--  DATE ${date} -->
 
+#set($processInput = ${schema.processInputClass})
+#set($feedletClass = ${schema.feedletClass})
 #set($description = ${table.description})
 #set($delimiter = ${table.csv.delimiter})
-#set($doIgnoreRecord = ${table.csv.doIgnoreRecord})
-#set($ignoredRecordBy = ${table.csv.ignoredRecordBy})
-#set($ignoredRecordEnglish = ${table.csv.ignoredRecordEnglish})
+#set($ignoreHeaderLine = ${table.csv.ignoreHeaderLine})
 #set($midfix = ${table.csv.midfix})
 #set($format = ${table.csv.format})
 #set($pojoClassPath = "${schema.javaPackage}.${table.pojo.className}")
@@ -18,13 +18,10 @@
 
     <processNonTradingDays>true</processNonTradingDays>
 
-    <input name="csvIn" className="com.smartsgroup.connectors.hksql.input.HKStaticCsvInputStream">
+    <input name="csvIn" className="${processInput}">
         <property name="fieldDelimiter">${delimiter}</property>
-#if (${doIgnoreRecord})
-        <property name="ignoreRecordBy">${ignoredRecordBy}</property>
-        <property name="ignoreRecordEnglish">${ignoredRecordEnglish}</property>
-#end
-        <property name="bean">${pojoClassPath}</property>
+        <property name="ignoreHeaderLine">${ignoreHeaderLine}</property>
+        <property name="beanClass">${pojoClassPath}</property>
         <optional>true</optional>
         <filePattern>
             <marketCode>${marketCode}</marketCode>
@@ -34,7 +31,7 @@
     </input>
 
     <sequence input="csvIn" output="devNull">
-        <feedlet className="com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet">
+        <feedlet className="${feedletClass}">
             <property name="dbFile">${dbFile}</property>
             <property name="inputBean">${pojoClassPath}</property>
             <property name="type">daily</property>

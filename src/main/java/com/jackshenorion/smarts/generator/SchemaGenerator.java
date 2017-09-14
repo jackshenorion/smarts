@@ -18,7 +18,7 @@ public class SchemaGenerator {
 
     public final static String marketCode = "dcass";
     public final static String javaPackage = "com.smartsgroup.connectors.hksql.feedlets.lookup";
-    public final static String processInputClass = "com.smartsgroup.connectors.hksql.input.HKStaticCsvInputStream";
+    public final static String processInputClass = "com.smartsgroup.tools.streams.csv.CsvInputStream";
     public final static String feedletClass = "com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet";
     public final static String converterXmlFilePrefix = "hksql_loader_";
     public final static String sampleFilePathRoot = "samples/";
@@ -88,13 +88,8 @@ public class SchemaGenerator {
         SqlLoaderCsv csv = new SqlLoaderCsv();
         csv.setDelimiter(file.getDelimiter())
                 .setMidfix("." + getFileBaseName(file))
-                .setFormat(getFileExtension(file));
-        if (file.isHasTitle()) {
-            List<String> titles = getTitles(file);
-            csv.setDoIgnoreRecord(true).setIgnoredRecordBy(titles.get(0)).setIgnoredRecordEnglish(titles.get(0));
-        } else {
-            csv.setDoIgnoreRecord(false);
-        }
+                .setFormat(getFileExtension(file))
+                .setIgnoreHeaderLine(file.isHasTitle());
         return csv;
     }
 

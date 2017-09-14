@@ -1,6 +1,6 @@
 {
   "marketCode" : "dcass",
-  "processInputClass" : "com.smartsgroup.connectors.hksql.input.HKStaticCsvInputStream",
+  "processInputClass" : "com.smartsgroup.tools.streams.csv.CsvInputStream",
   "feedletClass" : "com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet",
   "javaPackage" : "com.smartsgroup.connectors.hksql.feedlets.lookup",
   "tables" : [ {
@@ -9,9 +9,7 @@
       "midfix" : ".BI_Omni_Code_Info_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "BI/Omni Code",
-      "ignoredRecordEnglish" : "BI/Omni Code"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "bi_omni_code_info_sfc.sqlite",
@@ -45,9 +43,7 @@
       "midfix" : ".EP_OI_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "Trade Date",
-      "ignoredRecordEnglish" : "Trade Date"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "ep_oi_sfc.sqlite",
@@ -111,9 +107,7 @@
       "midfix" : ".LOP_AC_Info_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "EP Code",
-      "ignoredRecordEnglish" : "EP Code"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "lop_ac_info_sfc.sqlite",
@@ -182,9 +176,7 @@
       "midfix" : ".LOP_Data_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "Trade Date",
-      "ignoredRecordEnglish" : "Trade Date"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "lop_data_sfc.sqlite",
@@ -273,9 +265,7 @@
       "midfix" : ".Market_OI_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "Trade Date",
-      "ignoredRecordEnglish" : "Trade Date"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "market_oi_sfc.sqlite",
@@ -324,9 +314,7 @@
       "midfix" : ".TO_Code_Info_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "TO Code",
-      "ignoredRecordEnglish" : "TO Code"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "to_code_info_sfc.sqlite",
@@ -355,9 +343,7 @@
       "midfix" : ".TO_LOP_AC_Info_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "TO Code",
-      "ignoredRecordEnglish" : "TO Code"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "to_lop_ac_info_sfc.sqlite",
@@ -411,9 +397,7 @@
       "midfix" : ".TO_LOP_Data_SFC",
       "format" : "csv",
       "delimiter" : ",",
-      "doIgnoreRecord" : true,
-      "ignoredRecordBy" : "Trade Date",
-      "ignoredRecordEnglish" : "Trade Date"
+      "ignoreHeaderLine" : true
     },
     "sqlite" : {
       "dbFile" : "to_lop_data_sfc.sqlite",
