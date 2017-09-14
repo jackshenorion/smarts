@@ -31,6 +31,7 @@ dependencies {
 	compile group: 'com.google.guava', name: 'guava', version: '23.0'
 	compile "com.amazonaws:aws-java-sdk:1.11.149"
 	compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
+	compile group: 'commons-io', name: 'commons-io', version: '2.5'
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

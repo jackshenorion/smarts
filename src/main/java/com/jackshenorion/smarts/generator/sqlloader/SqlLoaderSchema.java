@@ -16,40 +16,45 @@ public class SqlLoaderSchema {
         return marketCode;
     }
 
-    public void setMarketCode(String marketCode) {
+    public SqlLoaderSchema setMarketCode(String marketCode) {
         this.marketCode = marketCode;
+        return this;
     }
 
     public String getProcessInputClass() {
         return processInputClass;
     }
 
-    public void setProcessInputClass(String processInputClass) {
+    public SqlLoaderSchema setProcessInputClass(String processInputClass) {
         this.processInputClass = processInputClass;
+        return this;
     }
 
     public String getFeedletClass() {
         return feedletClass;
     }
 
-    public void setFeedletClass(String feedletClass) {
+    public SqlLoaderSchema setFeedletClass(String feedletClass) {
         this.feedletClass = feedletClass;
-    }
-
-    public List<SqlLoaderTable> getTables() {
-        return tables;
-    }
-
-    public void setTables(List<SqlLoaderTable> tables) {
-        this.tables = tables;
+        return this;
     }
 
     public String getJavaPackage() {
         return javaPackage;
     }
 
-    public void setJavaPackage(String javaPackage) {
+    public SqlLoaderSchema setJavaPackage(String javaPackage) {
         this.javaPackage = javaPackage;
+        return this;
+    }
+
+    public List<SqlLoaderTable> getTables() {
+        return tables;
+    }
+
+    public SqlLoaderSchema setTables(List<SqlLoaderTable> tables) {
+        this.tables = tables;
+        return this;
     }
 
     @Override

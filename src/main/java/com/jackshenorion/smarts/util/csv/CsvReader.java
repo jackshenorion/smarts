@@ -32,4 +32,11 @@ public class CsvReader {
         return read(new FileInputStream(new File(fileName)));
     }
 
+    public static String[] readTitle(String fileName) throws IOException {
+        CsvMapper mapper = new CsvMapper();
+        mapper.enable(CsvParser.Feature.WRAP_AS_ARRAY);
+        MappingIterator<String[]> it = mapper.readerFor(String[].class)
+                .readValues(new FileInputStream(new File(fileName)));
+        return it.next();
+    }
 }

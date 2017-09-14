@@ -8,16 +8,18 @@ public class SqlLoaderSqlite {
         return dbFile;
     }
 
-    public void setDbFile(String dbFile) {
+    public SqlLoaderSqlite setDbFile(String dbFile) {
         this.dbFile = dbFile;
+        return this;
     }
 
     public String getTableName() {
         return tableName;
     }
 
-    public void setTableName(String tableName) {
+    public SqlLoaderSqlite setTableName(String tableName) {
         this.tableName = tableName;
+        return this;
     }
 
     @Override

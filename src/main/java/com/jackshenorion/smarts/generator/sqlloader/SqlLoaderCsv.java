@@ -1,59 +1,65 @@
 package com.jackshenorion.smarts.generator.sqlloader;
 
 public class SqlLoaderCsv {
+    public String midfix;
+    public String format;
     public String delimiter;
     public boolean doIgnoreRecord;
     public String ignoredRecordBy;
     public String ignoredRecordEnglish;
-    public String midfix;
-    public String format;
-
-    public String getDelimiter() {
-        return delimiter;
-    }
-
-    public void setDelimiter(String delimiter) {
-        this.delimiter = delimiter;
-    }
-
-    public boolean isDoIgnoreRecord() {
-        return doIgnoreRecord;
-    }
-
-    public void setDoIgnoreRecord(boolean doIgnoreRecord) {
-        this.doIgnoreRecord = doIgnoreRecord;
-    }
-
-    public String getIgnoredRecordBy() {
-        return ignoredRecordBy;
-    }
-
-    public void setIgnoredRecordBy(String ignoredRecordBy) {
-        this.ignoredRecordBy = ignoredRecordBy;
-    }
-
-    public String getIgnoredRecordEnglish() {
-        return ignoredRecordEnglish;
-    }
-
-    public void setIgnoredRecordEnglish(String ignoredRecordEnglish) {
-        this.ignoredRecordEnglish = ignoredRecordEnglish;
-    }
 
     public String getMidfix() {
         return midfix;
     }
 
-    public void setMidfix(String midfix) {
+    public SqlLoaderCsv setMidfix(String midfix) {
         this.midfix = midfix;
+        return this;
     }
 
     public String getFormat() {
         return format;
     }
 
-    public void setFormat(String format) {
+    public SqlLoaderCsv setFormat(String format) {
         this.format = format;
+        return this;
+    }
+
+    public String getDelimiter() {
+        return delimiter;
+    }
+
+    public SqlLoaderCsv setDelimiter(String delimiter) {
+        this.delimiter = delimiter;
+        return this;
+    }
+
+    public boolean isDoIgnoreRecord() {
+        return doIgnoreRecord;
+    }
+
+    public SqlLoaderCsv setDoIgnoreRecord(boolean doIgnoreRecord) {
+        this.doIgnoreRecord = doIgnoreRecord;
+        return this;
+    }
+
+    public String getIgnoredRecordBy() {
+        return ignoredRecordBy;
+    }
+
+    public SqlLoaderCsv setIgnoredRecordBy(String ignoredRecordBy) {
+        this.ignoredRecordBy = ignoredRecordBy;
+        return this;
+    }
+
+    public String getIgnoredRecordEnglish() {
+        return ignoredRecordEnglish;
+    }
+
+    public SqlLoaderCsv setIgnoredRecordEnglish(String ignoredRecordEnglish) {
+        this.ignoredRecordEnglish = ignoredRecordEnglish;
+        return this;
     }
 
     @Override

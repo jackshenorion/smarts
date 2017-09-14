@@ -64,9 +64,7 @@ public class SqlLoaderGenerator {
     }
 
     private SqlLoaderSchema loadSchema() throws IOException {
-        ClassLoader classLoader = getClass().getClassLoader();
-        String absolutePath = new File(classLoader.getResource(schemaFile).getFile()).getAbsolutePath();;
-        return JsonUtil.readFromFile(absolutePath, SqlLoaderSchema.class);
+        return JsonUtil.readFromFile(schemaFile, SqlLoaderSchema.class);
     }
 
     private Template loadTemplate(String templateFile) {
@@ -85,7 +83,6 @@ public class SqlLoaderGenerator {
 
     private void createXmlFileFromTemplate(SqlLoaderTable table, Template template) {
         String s = getStringFromTemplate(template, table);
-        System.out.println(s);
         String filePath = outputDir + "/" + this.schema.getJavaPackage() + "/" + table.getConverter().getFileName();
         writeFile(filePath, s);
     }
@@ -111,6 +108,7 @@ public class SqlLoaderGenerator {
 
     private void writeFile(String filePath, String pojoString) {
         try {
+            System.out.println("Write file " + filePath + " successfully!");
             IOUtil.writeTextFile(filePath, pojoString);
         } catch (IOException e) {
             e.printStackTrace();

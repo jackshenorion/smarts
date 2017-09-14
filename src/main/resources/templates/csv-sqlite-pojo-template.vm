@@ -10,8 +10,6 @@ import com.smartsgroup.lib.sqlite.SQLiteWrapper;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
-import java.text.DecimalFormat;
-import java.text.ParseException;
 
 #set($props = ${table.pojo.props})
 #set($className = ${table.pojo.className})

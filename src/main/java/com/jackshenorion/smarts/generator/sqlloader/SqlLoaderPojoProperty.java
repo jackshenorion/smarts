@@ -1,12 +1,17 @@
 package com.jackshenorion.smarts.generator.sqlloader;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class SqlLoaderPojoProperty {
-    private String name;
-    private String type;
-    private boolean isNumber;
     private String csvName;
     private String sqliteName;
+    private String name;
+    private boolean isNumber;
+    @JsonIgnore
+    private String type;
+    @JsonIgnore
     private String setter;
+    @JsonIgnore
     private String getter;
 
     public String getName() {
