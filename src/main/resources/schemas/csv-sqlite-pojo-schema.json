@@ -1,7 +1,7 @@
 {
   "marketCode" : "dcass",
   "processInputClass" : "com.smartsgroup.tools.streams.csv.CsvInputStream",
-  "feedletClass" : "com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet",
+  "feedletClass" : "com.smartsgroup.lib.sqlite.SqlLoaderFeedlet",
   "javaPackage" : "com.smartsgroup.connectors.hksql.feedlets.lookup",
   "tables" : [ {
     "description" : "Converts BI_Omni_Code_Info_SFC to Sqlite",

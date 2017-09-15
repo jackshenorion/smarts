@@ -19,7 +19,7 @@ public class SchemaGenerator {
     public final static String marketCode = "dcass";
     public final static String javaPackage = "com.smartsgroup.connectors.hksql.feedlets.lookup";
     public final static String processInputClass = "com.smartsgroup.tools.streams.csv.CsvInputStream";
-    public final static String feedletClass = "com.smartsgroup.connectors.hksql.feedlets.SqlLoaderFeedlet";
+    public final static String feedletClass = "com.smartsgroup.lib.sqlite.SqlLoaderFeedlet";
     public final static String converterXmlFilePrefix = "hksql_loader_";
     public final static String sampleFilePathRoot = "samples/";
     public final static String outputDir = System.getProperty("user.home") + "/Documents/Temp/gen";
