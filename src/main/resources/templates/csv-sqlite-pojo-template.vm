@@ -15,7 +15,7 @@ import java.io.Serializable;
 #set($className = ${table.pojo.className})
 #set($tableName = ${table.sqlite.tableName})
 
-@SQLiteWrapper.Table(name="${tableName}")
+@SQLiteWrapper.Table(name="${tableName}", ifNotExists=true)
 @JsonPropertyOrder({
 #foreach (${prop} in ${props})
 "${prop.csvName}",

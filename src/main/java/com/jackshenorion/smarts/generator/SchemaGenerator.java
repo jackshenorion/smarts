@@ -17,10 +17,10 @@ import java.util.List;
 public class SchemaGenerator {
 
     public final static String marketCode = "dcass";
-    public final static String javaPackage = "com.smartsgroup.connectors.hksql.feedlets.lookup";
+    public final static String javaPackage = "com.smartsgroup.connectors.hksqlgw.feedlets.lookup";
     public final static String processInputClass = "com.smartsgroup.tools.streams.csv.CsvInputStream";
     public final static String feedletClass = "com.smartsgroup.lib.sqlite.SqlLoaderFeedlet";
-    public final static String converterXmlFilePrefix = "hksql_loader_";
+    public final static String converterXmlFilePrefix = "hksqlgw_loader_";
     public final static String sampleFilePathRoot = "samples/";
     public final static String outputDir = System.getProperty("user.home") + "/Documents/Temp/gen";
     public final static String schemaFileName = "csv-sqlite-pojo-schema.json";
@@ -34,7 +34,8 @@ public class SchemaGenerator {
                 new CsvFile().setFileName("Market_OI_SFC.csv"),
                 new CsvFile().setFileName("TO_Code_Info_SFC.csv"),
                 new CsvFile().setFileName("TO_LOP_AC_Info_SFC.csv"),
-                new CsvFile().setFileName("TO_LOP_Data_SFC.csv")
+                new CsvFile().setFileName("TO_LOP_Data_SFC.csv"),
+                new CsvFile().setFileName("tp001_o.raw")
         ));
     }
 

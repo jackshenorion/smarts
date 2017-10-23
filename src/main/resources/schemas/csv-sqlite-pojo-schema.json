@@ -2,7 +2,7 @@
   "marketCode" : "dcass",
   "processInputClass" : "com.smartsgroup.tools.streams.csv.CsvInputStream",
   "feedletClass" : "com.smartsgroup.lib.sqlite.SqlLoaderFeedlet",
-  "javaPackage" : "com.smartsgroup.connectors.hksql.feedlets.lookup",
+  "javaPackage" : "com.smartsgroup.connectors.hksqlgw.feedlets.lookup",
   "tables" : [ {
     "description" : "Converts BI_Omni_Code_Info_SFC to Sqlite",
     "csv" : {
@@ -16,7 +16,7 @@
       "tableName" : "bi_omni_code_info_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_bi_omni_code_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_bi_omni_code_info_sfc.xml"
     },
     "pojo" : {
       "className" : "BiOmniCodeInfoSfc",
@@ -50,7 +50,7 @@
       "tableName" : "ep_oi_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_ep_oi_sfc.xml"
+      "fileName" : "hksqlgw_loader_ep_oi_sfc.xml"
     },
     "pojo" : {
       "className" : "EpOiSfc",
@@ -114,7 +114,7 @@
       "tableName" : "lop_ac_info_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_lop_ac_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_lop_ac_info_sfc.xml"
     },
     "pojo" : {
       "className" : "LopAcInfoSfc",
@@ -183,7 +183,7 @@
       "tableName" : "lop_data_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_lop_data_sfc.xml"
+      "fileName" : "hksqlgw_loader_lop_data_sfc.xml"
     },
     "pojo" : {
       "className" : "LopDataSfc",
@@ -272,7 +272,7 @@
       "tableName" : "market_oi_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_market_oi_sfc.xml"
+      "fileName" : "hksqlgw_loader_market_oi_sfc.xml"
     },
     "pojo" : {
       "className" : "MarketOiSfc",
@@ -321,7 +321,7 @@
       "tableName" : "to_code_info_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_to_code_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_to_code_info_sfc.xml"
     },
     "pojo" : {
       "className" : "ToCodeInfoSfc",
@@ -350,7 +350,7 @@
       "tableName" : "to_lop_ac_info_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_to_lop_ac_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_to_lop_ac_info_sfc.xml"
     },
     "pojo" : {
       "className" : "ToLopAcInfoSfc",
@@ -404,7 +404,7 @@
       "tableName" : "to_lop_data_sfc"
     },
     "converter" : {
-      "fileName" : "hksql_loader_to_lop_data_sfc.xml"
+      "fileName" : "hksqlgw_loader_to_lop_data_sfc.xml"
     },
     "pojo" : {
       "className" : "ToLopDataSfc",
@@ -472,6 +472,105 @@
         "csvName" : "LOP PD",
         "sqliteName" : "LOP_PD",
         "name" : "lopPd",
+        "isNumber" : false
+      } ]
+    }
+  }, {
+    "description" : "Converts tp001_o to Sqlite",
+    "csv" : {
+      "midfix" : ".tp001_o",
+      "format" : "raw",
+      "delimiter" : ",",
+      "ignoreHeaderLine" : true
+    },
+    "sqlite" : {
+      "dbFile" : "tp001_o.sqlite",
+      "tableName" : "tp001_o"
+    },
+    "converter" : {
+      "fileName" : "hksqlgw_loader_tp001_o.xml"
+    },
+    "pojo" : {
+      "className" : "Tp001O",
+      "props" : [ {
+        "csvName" : "Member",
+        "sqliteName" : "MEMBER",
+        "name" : "member",
+        "isNumber" : false
+      }, {
+        "csvName" : "Account No.",
+        "sqliteName" : "ACCOUNT_NO",
+        "name" : "accountNo",
+        "isNumber" : false
+      }, {
+        "csvName" : "Instrument",
+        "sqliteName" : "INSTRUMENT",
+        "name" : "instrument",
+        "isNumber" : false
+      }, {
+        "csvName" : "Member Name",
+        "sqliteName" : "MEMBER_NAME",
+        "name" : "memberName",
+        "isNumber" : false
+      }, {
+        "csvName" : "Market",
+        "sqliteName" : "MARKET",
+        "name" : "market",
+        "isNumber" : false
+      }, {
+        "csvName" : "Market Name",
+        "sqliteName" : "MARKET_NAME",
+        "name" : "marketName",
+        "isNumber" : false
+      }, {
+        "csvName" : "Underlying",
+        "sqliteName" : "UNDERLYING",
+        "name" : "underlying",
+        "isNumber" : false
+      }, {
+        "csvName" : "Underlying Name",
+        "sqliteName" : "UNDERLYING_NAME",
+        "name" : "underlyingName",
+        "isNumber" : false
+      }, {
+        "csvName" : "Currency",
+        "sqliteName" : "CURRENCY",
+        "name" : "currency",
+        "isNumber" : false
+      }, {
+        "csvName" : "Prev Position - Long",
+        "sqliteName" : "PREV_POSITION_LONG",
+        "name" : "prevPositionLong",
+        "isNumber" : false
+      }, {
+        "csvName" : "Prev Position - Short",
+        "sqliteName" : "PREV_POSITION_SHORT",
+        "name" : "prevPositionShort",
+        "isNumber" : false
+      }, {
+        "csvName" : "Prev Settlement Price",
+        "sqliteName" : "PREV_SETTLEMENT_PRICE",
+        "name" : "prevSettlementPrice",
+        "isNumber" : false
+      }, {
+        "csvName" : "Prev Variation Adjustment",
+        "sqliteName" : "PREV_VARIATION_ADJUSTMENT",
+        "name" : "prevVariationAdjustment",
+        "isNumber" : false
+      }, {
+        "csvName" : "Current Position - Long",
+        "sqliteName" : "CURRENT_POSITION_LONG",
+        "name" : "currentPositionLong",
+        "isNumber" : false
+      }, {
+        "csvName" : "Current Position - Short",
+        "sqliteName" : "CURRENT_POSITION_SHORT",
+        "name" : "currentPositionShort",
+        "isNumber" : false
+      }, {
+        "csvName" : "Current Settlement Price",
+        "sqliteName" : "CURRENT_SETTLEMENT_PRICE",
+        "name" : "currentSettlementPrice",
         "isNumber" : false
       } ]
     }
