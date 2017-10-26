@@ -38,6 +38,35 @@
       } ]
     }
   }, {
+    "description" : "Converts EP_Info_SFC to Sqlite",
+    "csv" : {
+      "midfix" : ".EP_Info_SFC",
+      "format" : "csv",
+      "delimiter" : ",",
+      "ignoreHeaderLine" : true
+    },
+    "sqlite" : {
+      "dbFile" : "ep_info_sfc.sqlite",
+      "tableName" : "ep_info_sfc"
+    },
+    "converter" : {
+      "fileName" : "hksqlgw_loader_ep_info_sfc.xml"
+    },
+    "pojo" : {
+      "className" : "EpInfoSfc",
+      "props" : [ {
+        "csvName" : "EP Code",
+        "sqliteName" : "EP_CODE",
+        "name" : "epCode",
+        "isNumber" : false
+      }, {
+        "csvName" : "EP Name",
+        "sqliteName" : "EP_NAME",
+        "name" : "epName",
+        "isNumber" : false
+      } ]
+    }
+  }, {
     "description" : "Converts EP_OI_SFC to Sqlite",
     "csv" : {
       "midfix" : ".EP_OI_SFC",
@@ -98,6 +127,90 @@
         "csvName" : "EP OI Total Short",
         "sqliteName" : "EP_OI_TOTAL_SHORT",
         "name" : "epOiTotalShort",
+        "isNumber" : false
+      } ]
+    }
+  }, {
+    "description" : "Converts LOP TO BI CODE TO SFC to Sqlite",
+    "csv" : {
+      "midfix" : ".LOP TO BI CODE TO SFC",
+      "format" : "csv",
+      "delimiter" : ",",
+      "ignoreHeaderLine" : true
+    },
+    "sqlite" : {
+      "dbFile" : "lop to bi code to sfc.sqlite",
+      "tableName" : "lop to bi code to sfc"
+    },
+    "converter" : {
+      "fileName" : "hksqlgw_loader_lop to bi code to sfc.xml"
+    },
+    "pojo" : {
+      "className" : "LopToBiCodeToSfc",
+      "props" : [ {
+        "csvName" : "TO Code",
+        "sqliteName" : "TO_CODE",
+        "name" : "toCode",
+        "isNumber" : false
+      }, {
+        "csvName" : "Hidden_TO",
+        "sqliteName" : "HIDDEN_TO",
+        "name" : "hiddenTo",
+        "isNumber" : false
+      }, {
+        "csvName" : "Assigned TO Name",
+        "sqliteName" : "ASSIGNED_TO_NAME",
+        "name" : "assignedToName",
+        "isNumber" : false
+      }, {
+        "csvName" : "EP Code",
+        "sqliteName" : "EP_CODE",
+        "name" : "epCode",
+        "isNumber" : false
+      }, {
+        "csvName" : "A/C No",
+        "sqliteName" : "A_C_NO",
+        "name" : "aCNo",
+        "isNumber" : false
+      }, {
+        "csvName" : "A/C Name",
+        "sqliteName" : "A_C_NAME",
+        "name" : "aCName",
+        "isNumber" : false
+      }, {
+        "csvName" : "Reported BI Name",
+        "sqliteName" : "REPORTED_BI_NAME",
+        "name" : "reportedBiName",
+        "isNumber" : false
+      }, {
+        "csvName" : "Reported TO Name",
+        "sqliteName" : "REPORTED_TO_NAME",
+        "name" : "reportedToName",
+        "isNumber" : false
+      }, {
+        "csvName" : "TO BI Code",
+        "sqliteName" : "TO_BI_CODE",
+        "name" : "toBiCode",
+        "isNumber" : false
+      }, {
+        "csvName" : "Assigned BI Name",
+        "sqliteName" : "ASSIGNED_BI_NAME",
+        "name" : "assignedBiName",
+        "isNumber" : false
+      }, {
+        "csvName" : "Watch",
+        "sqliteName" : "WATCH",
+        "name" : "watch",
+        "isNumber" : false
+      }, {
+        "csvName" : "Creation Date",
+        "sqliteName" : "CREATION_DATE",
+        "name" : "creationDate",
+        "isNumber" : false
+      }, {
+        "csvName" : "Remark",
+        "sqliteName" : "REMARK",
+        "name" : "remark",
         "isNumber" : false
       } ]
     }
@@ -256,6 +369,40 @@
         "csvName" : "LOP PD",
         "sqliteName" : "LOP_PD",
         "name" : "lopPd",
+        "isNumber" : false
+      } ]
+    }
+  }, {
+    "description" : "Converts Market_GPD to Sqlite",
+    "csv" : {
+      "midfix" : ".Market_GPD",
+      "format" : "csv",
+      "delimiter" : ",",
+      "ignoreHeaderLine" : true
+    },
+    "sqlite" : {
+      "dbFile" : "market_gpd.sqlite",
+      "tableName" : "market_gpd"
+    },
+    "converter" : {
+      "fileName" : "hksqlgw_loader_market_gpd.xml"
+    },
+    "pojo" : {
+      "className" : "MarketGpd",
+      "props" : [ {
+        "csvName" : "Date",
+        "sqliteName" : "DATE",
+        "name" : "date",
+        "isNumber" : false
+      }, {
+        "csvName" : "Product",
+        "sqliteName" : "PRODUCT",
+        "name" : "product",
+        "isNumber" : false
+      }, {
+        "csvName" : "GPD Value",
+        "sqliteName" : "GPD_VALUE",
+        "name" : "gpdValue",
         "isNumber" : false
       } ]
     }

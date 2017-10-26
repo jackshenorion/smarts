@@ -28,9 +28,12 @@ public class SchemaGenerator {
     public static void main(String[] args) throws IOException {
         new SchemaGenerator().createSchema(Arrays.asList(
                 new CsvFile().setFileName("BI_Omni_Code_Info_SFC.csv"),
+                new CsvFile().setFileName("EP_Info_SFC.csv"),
                 new CsvFile().setFileName("EP_OI_SFC.csv"),
+                new CsvFile().setFileName("LOP TO BI CODE TO SFC.csv"),
                 new CsvFile().setFileName("LOP_AC_Info_SFC.csv"),
                 new CsvFile().setFileName("LOP_Data_SFC.csv"),
+                new CsvFile().setFileName("Market_GPD.csv"),
                 new CsvFile().setFileName("Market_OI_SFC.csv"),
                 new CsvFile().setFileName("TO_Code_Info_SFC.csv"),
                 new CsvFile().setFileName("TO_LOP_AC_Info_SFC.csv"),
@@ -72,7 +75,7 @@ public class SchemaGenerator {
     public String getAbsolutePath(String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
         String absolutePath = new File(classLoader.getResource(sampleFilePathRoot + fileName).getFile()).getAbsolutePath();;
-        return absolutePath;
+        return absolutePath.replace("%20", " ");
     }
 
     private SqlLoaderTable createCsvFileSchema(CsvFile file) throws IOException {

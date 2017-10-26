@@ -1,0 +1,35 @@
+EP Code,LOP A/C No,A/C Name,Reported BI Name,Reported TO Name,BI/Omni Code,BI Name,Mother BI/Omni Code,BI TO Code,BI TO Name
+BBL,F0009,New Smarter Trading Ltd,China Eagle Group Co. Ltd.,,INS_0001,China Eagle Group Co. Ltd.,,,
+BBL,FI002,ISS Group Ltd,ISS Group Ltd,,INV_0081,ISS Group Ltd,,,
+BCA,101L1900,Orbis Optmal USD Fund Ltd,Orbis Optmal USD Fund Ltd,Orbis Investment Management Limited,HED_0123,Orbis Optimal USD Fund Ltd,,BIT_0001,Orbis Investment Management Limited
+BCA,101L1901,Orbis Optimal SA Fund Ltd,Orbis Optimal SA Fund Ltd,Orbis Investment Management Limited,HED_0124,Orbis Optimal SA Fund Ltd,,BIT_0001,Orbis Investment Management Limited
+BCA,101L1902,Orbis Optimal Global Fund Ltd,Orbis Optimal Global Fund Ltd,Orbis Investment Management Limited,HED_0125,Orbis Optimal Global Fund Ltd,,BIT_0001,Orbis Investment Management Limited
+BCA,012-30242,Bear Stearns Securities Corp. Customer Omnibus Account,Ritchie Opportunistic Trading Ltd,"Ritchie Capital Management, LLC",HED_0126,Ritchie Opportunistic Trading Ltd,OMN_0004,BIT_0002,"Ritchie Capital Management, LLC"
+BCA,012-30299,Bear Stearns Securities Corp. Customer Omnibus Account,Ritchie Global Relative Trading Limited,"Ritchie Capital Management, LLC",HED_0127,Ritchie Global Relative Trading Limited,OMN_0004,BIT_0002,"Ritchie Capital Management, LLC"
+BCA,8718C,Macro Diversified Opportunity (GMS),Macro Diversified Opportunity (GMS),Graham Capital Management,HED_0128,Macro Diversified Opportunity (GMS),,BIT_0003,"Graham Capital Management, LP"
+BCA,8736C,Macro Commodity Discretionary (GMS),Macro Commodity Discretionary (GMS),Graham Capital Management,HED_0129,Macro Commodity Discretionary (GMS),,BIT_0003,"Graham Capital Management, LP"
+BCA,8746C,USQMN - Macro Asia Focus,USQMN - Macro Asia Focus,Graham Capital Management,HED_0130,Macro Asia Focus,,BIT_0003,"Graham Capital Management, LP"
+BCA,8748C,Macro EM Tactical (GMS),Macro EM Tactical (GMS),Graham Capital Management,HED_0131,Macro EM Tactical (GMS),,BIT_0003,"Graham Capital Management, LP"
+BCA,8773C,Macro Quant Alpha (USQMN),Macro Quant Alpha (USQMN),Graham Capital Management,HED_0132,Macro Quant Alpha (USQMN),,BIT_0003,"Graham Capital Management, LP"
+BCA,303229,PRU - Passive Global Equity,AST Goldman Sachs Multi-Asset Portfolio,Goldman Sachs Asset Management,INS_0002,AST Goldman Sachs Multi-Asset Portfolio,,BIT_0005,Goldman Sachs Asset Management
+BCA,404267,TEX-Global Equities,Goldman Sachs Tactical Exposure Portfolio (Lux),Goldman Sachs Assets Management,INS_0003,Goldman Sachs Tactical Exposure Portfolio (Lux),,BIT_0005,Goldman Sachs Asset Management
+BCA,5555-1234,"AQR Capital Management, LLC","AQR Capital Management, LLC",,HED_0133,"AQR Capital Management, LLC",,,
+BCA,731S8000,Nomura Int'l Plc,Nomura Int'l Plc,,OMN_0099,Nomura International Plc London (Omnibus),,,
+BCA,5000,Barclays Bank Plc (Singapore),Barclays Bank Plc (Singapore),,OMN_0100,Barclays Bank Plc (Singapore),,,
+BCA,5000-04018,OCBC Securities Pte Ltd House A/c,Oversea-Chinese Banking Corporation Limited,,OMN_0101,Oversea-Chinese Banking Corporation Limited (Omnibus account),,,
+BCA,5000-04022,UOB Bullion & Futures Limited Cust Segregated A/C,United Overseas Bank Limited,,OMN_0102,United Overseas Bank Limited (Omnibus account),,,
+BCA,5000-04032,Macquarie Bank Limited,Macquarie Bank Limited,,OMN_0103,Macquarie Bank Ltd - Omnibus Account,,,
+BCA,5000-04033,Macquarie Bank Limited,Macquarie Group Limited,,GPR_4446,Macquarie Group,,,
+BCA,5000-04035,Royal Bank of Canada,Royal Bank of Canada,,INV_0082,Royal Bank of Canada,,,
+BCA,5000-04036,BCFS 19632-Nomura Fut (Sing) Pte Ltd,Nomura Securities Singapore Pte Ltd,,GPR_4447,NRA-House,,,
+BCA,5000-04037,Nomura Fut (SING) PTE Ltd,Nomura Fut (SING) PTE Ltd,,INS_0004,Nomura Fut (SING) PTE Ltd,,,
+BCA,5000-04038,Royal Bank of Canada,Royal Bank of Canada,,INV_0084,Royal Bank of Canada,,,
+BCA,5000-04039,BCFS 21302 - SAMSUNG FUT IN,Samsung C&T Corporation,,INS_0005,Samsung C&T Corporation,,,
+BCA,5000-04041,BCFS 21254 - Eugene Investment and Futures Company Limited,Eugene Investment and Futures Company Limited,,OMN_0105,Eugene Investment and Futures Company Limited,,,
+BCA,5000-04046,BCFS 14228 - Macquarie Bank Ltd,Macquarie Bank Ltd,,OMN_0106,Macquarie Bank Ltd - Omnibus Account,,,
+BCA,5000-04051,Republic of Korea,Woori Futures Company Limited,,OMN_0107,Woori Futures Company Limited (Omnibus A/C),,,
+BCA,5000-04054,Eugene Investment & Securities Company Limited,Eugene Investment & Securities Company Limited,,OMN_0108,Eugene Investment & Securities Company Limited,,,
+BCA,5000-04056,Nomura Securities Singapore Pte Ltd - sub a/c NSS Customer Segregated A/C S12111,Nomura Securities Singapore Pte Ltd,,GPR_4448,NRA-House,,,
+BCA,5000-04058,BCFS 96523 - Integrated Core Asia-ICSA,Integrated Core Strategies (Asia) Pte. Ltd.,,HED_0569,Integrated Core Strategies (Asia) Pte. Ltd.,,BIT_0001,Millennium Capital Management (Hong Kong) Limited
+BCA,5000-04061,OCBC Securities PTE Ltd,Oversea-Chinese Banking Corporation Limited,,OMN_8107,Oversea-Chinese Banking Corporation Limited (Omnibus account),,,
+BCA,5000-04066,Royal Bank of Canada,Royal Bank of Canada,,INV_0085,Royal Bank of Canada,,,
