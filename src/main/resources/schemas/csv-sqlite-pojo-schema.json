@@ -6,7 +6,7 @@
   "tables" : [ {
     "description" : "Converts BI_Omni_Code_Info_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".BI_Omni_Code_Info_SFC",
+      "midfix" : ".bi_omni_code_info_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -40,7 +40,7 @@
   }, {
     "description" : "Converts EP_Info_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".EP_Info_SFC",
+      "midfix" : ".ep_info_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -69,7 +69,7 @@
   }, {
     "description" : "Converts EP_OI_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".EP_OI_SFC",
+      "midfix" : ".ep_oi_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -133,17 +133,17 @@
   }, {
     "description" : "Converts LOP TO BI CODE TO SFC to Sqlite",
     "csv" : {
-      "midfix" : ".LOP TO BI CODE TO SFC",
+      "midfix" : ".lop_to_bi_code_to_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "lop to bi code to sfc.sqlite",
-      "tableName" : "lop to bi code to sfc"
+      "dbFile" : "lop_to_bi_code_to_sfc.sqlite",
+      "tableName" : "lop_to_bi_code_to_sfc"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_lop to bi code to sfc.xml"
+      "fileName" : "hksqlgw_loader_lop_to_bi_code_to_sfc.xml"
     },
     "pojo" : {
       "className" : "LopToBiCodeToSfc",
@@ -217,7 +217,7 @@
   }, {
     "description" : "Converts LOP_AC_Info_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".LOP_AC_Info_SFC",
+      "midfix" : ".lop_ac_info_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -286,7 +286,7 @@
   }, {
     "description" : "Converts LOP_Data_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".LOP_Data_SFC",
+      "midfix" : ".lop_data_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -375,7 +375,7 @@
   }, {
     "description" : "Converts Market_GPD to Sqlite",
     "csv" : {
-      "midfix" : ".Market_GPD",
+      "midfix" : ".market_gpd",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -409,7 +409,7 @@
   }, {
     "description" : "Converts Market_OI_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".Market_OI_SFC",
+      "midfix" : ".market_oi_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -458,7 +458,7 @@
   }, {
     "description" : "Converts TO_Code_Info_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".TO_Code_Info_SFC",
+      "midfix" : ".to_code_info_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -487,7 +487,7 @@
   }, {
     "description" : "Converts TO_LOP_AC_Info_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".TO_LOP_AC_Info_SFC",
+      "midfix" : ".to_lop_ac_info_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
@@ -541,7 +541,7 @@
   }, {
     "description" : "Converts TO_LOP_Data_SFC to Sqlite",
     "csv" : {
-      "midfix" : ".TO_LOP_Data_SFC",
+      "midfix" : ".to_lop_data_sfc",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true

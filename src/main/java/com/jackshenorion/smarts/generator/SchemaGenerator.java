@@ -91,21 +91,22 @@ public class SchemaGenerator {
     private SqlLoaderCsv createCsvSchemaPart(CsvFile file) throws IOException {
         SqlLoaderCsv csv = new SqlLoaderCsv();
         csv.setDelimiter(file.getDelimiter())
-                .setMidfix("." + getFileBaseName(file))
-                .setFormat(getFileExtension(file))
+                .setMidfix("." + getFileBaseName(file).toLowerCase().replace(" ", "_"))
+                .setFormat(getFileExtension(file).toLowerCase())
                 .setIgnoreHeaderLine(file.isHasTitle());
         return csv;
     }
 
     private SqlLoaderSqlite createSqliteSchemaPart(CsvFile file) {
         SqlLoaderSqlite sqlite = new SqlLoaderSqlite();
-        sqlite.setDbFile(getDbFile(file)).setTableName(getTableName(file));
+        sqlite.setDbFile(getDbFile(file).replace(" ", "_"))
+                .setTableName(getTableName(file).replace(" ", "_"));
         return sqlite;
     }
 
     private SqlLoaderConverter createConverterSchemaPart(CsvFile file) {
         SqlLoaderConverter converter = new SqlLoaderConverter();
-        converter.setFileName(converterXmlFilePrefix + getFileBaseName(file).toLowerCase() + ".xml");
+        converter.setFileName(converterXmlFilePrefix + getFileBaseName(file).toLowerCase().replace(" ", "_") + ".xml");
         return converter;
     }
 
