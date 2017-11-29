@@ -1,4 +1,4 @@
-"Trade Date","EP Code","LOP A/C No","BI/Omni Code","BI TO Code","A/C Nature","A/C Type","Product Code","Strike","Option Type","Contract Month","LOP OI Long","LOP OI Short","LOP PD"
+"Trade Date:n","EP Code:n","LOP A/C No:n","BI/Omni Code","BI TO Code","A/C Nature","A/C Type","Product Code","Strike","Option Type","Contract Month","LOP OI Long:d","LOP OI Short:d","LOP PD:d"
 "23-12-2016","MLF","95U06165","INS_1528","","T","C","CAU",""," ","01/2017","3","",""
 "23-12-2016","UWD","008H7708","GPR_0072","","HG","C","CAU",""," ","01/2017","","4",""
 "23-12-2016","UWD","008H7708","GPR_0072","","HG","C","CAU",""," ","03/2017","","2",""

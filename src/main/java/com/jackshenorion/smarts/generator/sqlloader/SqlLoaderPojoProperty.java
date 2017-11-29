@@ -7,6 +7,7 @@ public class SqlLoaderPojoProperty {
     private String sqliteName;
     private String name;
     private boolean isNumber;
+    private boolean notNull;
     @JsonIgnore
     private String type;
     @JsonIgnore
@@ -74,6 +75,15 @@ public class SqlLoaderPojoProperty {
 
     public SqlLoaderPojoProperty setGetter(String getter) {
         this.getter = getter;
+        return this;
+    }
+
+    public boolean getNotNull() {
+        return notNull;
+    }
+
+    public SqlLoaderPojoProperty setNotNull(boolean notNull) {
+        this.notNull = notNull;
         return this;
     }
 

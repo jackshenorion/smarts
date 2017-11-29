@@ -1,4 +1,4 @@
-"EP Code","LOP A/C No","A/C Name","Reported BI Name","Reported TO Name","BI/Omni Code","BI Name","Mother BI/Omni Code","BI TO Code","BI TO Name"
+"EP Code:n","LOP A/C No:n","A/C Name","Reported BI Name","Reported TO Name","BI/Omni Code","BI Name","Mother BI/Omni Code","BI TO Code","BI TO Name"
 "AIM","THK32","XXX","XXX","XXX","IND_0007","XXX","","BIT_0146","XXX"
 "BBL","F00801","XXX","XXX","XXX","IND_0001","XXX","","","XXX"
 "BBL","F02979","XXX","XXX","XXX","INS_0075","XXX","","","XXX"

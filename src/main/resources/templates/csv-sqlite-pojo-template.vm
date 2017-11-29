@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.smartsgroup.lib.sqlite.SQLiteWrapper;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import com.google.common.base.Strings;
 
 import java.io.Serializable;
 
@@ -27,7 +28,7 @@ public class ${className} implements Serializable
 #foreach (${prop} in ${props})
 
 	@JsonProperty("${prop.csvName}")
-	@SQLiteWrapper.Column( notNull = false, name ="${prop.sqliteName}")
+	@SQLiteWrapper.Column( notNull = ${prop.notNull}, name ="${prop.sqliteName}")
 	public ${prop.type} ${prop.name};
 #end
 
@@ -51,10 +52,15 @@ public class ${className} implements Serializable
 	}
 #else
 	public void ${prop.setter}(${prop.type} ${prop.name}) {
-		this.${prop.name} = ${prop.name};
+		this.${prop.name} = getString( ${prop.name} );
 	}
 #end
 #end
+
+	private String getString( String s )
+	{
+		return Strings.isNullOrEmpty( s ) ? null : s;
+	}
 
 	@Override
 	public String toString() {

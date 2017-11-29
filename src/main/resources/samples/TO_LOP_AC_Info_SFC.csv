@@ -1,4 +1,4 @@
-"TO Code","LOP A/C No","A/C Name","Reported BI Name","Reported TO Name","TO BI Code","TO BI Name"
+"TO Code:n","LOP A/C No:n","A/C Name","Reported BI Name","Reported TO Name","TO BI Code","TO BI Name"
 "TOT_0001","(WAT)DOMINSON","XXX","XXX","XXX","","XXX"
 "TOT_0001","(BCF)DOMINSON","XXX","XXX","XXX","","XXX"
 "TOT_0001","(BOC)DOMINSON","XXX","XXX","XXX","","XXX"

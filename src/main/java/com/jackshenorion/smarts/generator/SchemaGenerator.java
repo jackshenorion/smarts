@@ -27,18 +27,19 @@ public class SchemaGenerator {
 
     public static void main(String[] args) throws IOException {
         new SchemaGenerator().createSchema(Arrays.asList(
-                new CsvFile().setFileName("BI_Omni_Code_Info_SFC.csv"),
-                new CsvFile().setFileName("EP_Info_SFC.csv"),
-                new CsvFile().setFileName("EP_OI_SFC.csv"),
-                new CsvFile().setFileName("LOP TO BI CODE TO SFC.csv"),
-                new CsvFile().setFileName("LOP_AC_Info_SFC.csv"),
-                new CsvFile().setFileName("LOP_Data_SFC.csv"),
-                new CsvFile().setFileName("Market_GPD.csv"),
-                new CsvFile().setFileName("Market_OI_SFC.csv"),
-                new CsvFile().setFileName("TO_Code_Info_SFC.csv"),
-                new CsvFile().setFileName("TO_LOP_AC_Info_SFC.csv"),
-                new CsvFile().setFileName("TO_LOP_Data_SFC.csv"),
-                new CsvFile().setFileName("tp001_o.raw")
+                new CsvFile().setFileName("BI_Omni_Code_Info_SFC.csv").setTableName("bi_omni_code_info"),
+                new CsvFile().setFileName("EP_Info_SFC.csv").setTableName("ep_info"),
+                new CsvFile().setFileName("EP_OI_SFC.csv").setTableName("ep_oi"),
+                new CsvFile().setFileName("LOP TO BI CODE TO SFC.csv").setTableName("lop_to_bi_code"),
+                new CsvFile().setFileName("LOP_AC_Info_SFC.csv").setTableName("lop_ac_info"),
+                new CsvFile().setFileName("LOP_Data_SFC.csv").setTableName("lop_data"),
+                new CsvFile().setFileName("Market_GPD.csv").setTableName("market_gpd"),
+                new CsvFile().setFileName("Market_OI_SFC.csv").setTableName("market_oi"),
+                new CsvFile().setFileName("TO_Code_Info_SFC.csv").setTableName("to_code_info"),
+                new CsvFile().setFileName("TO_LOP_AC_Info_SFC.csv").setTableName("to_lop_ac_info"),
+                new CsvFile().setFileName("TO_LOP_Data_SFC.csv").setTableName("to_lop_data"),
+                new CsvFile().setFileName("TP001_o_Position.raw").setTableName("tp001_o_position"),
+                new CsvFile().setFileName("TP001_f_Position.raw").setTableName("tp001_f_position")
         ));
     }
 
@@ -74,7 +75,7 @@ public class SchemaGenerator {
 
     public String getAbsolutePath(String fileName) {
         ClassLoader classLoader = getClass().getClassLoader();
-        String absolutePath = new File(classLoader.getResource(sampleFilePathRoot + fileName).getFile()).getAbsolutePath();;
+        String absolutePath = new File(classLoader.getResource(sampleFilePathRoot + fileName).getFile()).getAbsolutePath();
         return absolutePath.replace("%20", " ");
     }
 
@@ -106,7 +107,7 @@ public class SchemaGenerator {
 
     private SqlLoaderConverter createConverterSchemaPart(CsvFile file) {
         SqlLoaderConverter converter = new SqlLoaderConverter();
-        converter.setFileName(converterXmlFilePrefix + getFileBaseName(file).toLowerCase().replace(" ", "_") + ".xml");
+        converter.setFileName(converterXmlFilePrefix + getTableName(file).toLowerCase().replace(" ", "_") + ".xml");
         return converter;
     }
 
@@ -126,14 +127,37 @@ public class SchemaGenerator {
     private SqlLoaderPojoProperty createPojoProperty(String title) {
         SqlLoaderPojoProperty prop = new SqlLoaderPojoProperty();
         String fieldName = createFieldNameFromTitle(title);
-        prop.setCsvName(title)
+        boolean isNumber = isNumber(title);
+        boolean notNull = notNull(title);
+
+        prop.setCsvName(getTitleWithoutAttributes(title))
                 .setSqliteName(createSqliteNameFromTitle(title))
                 .setName(fieldName)
-                .setIsNumber(false)
+                .setIsNumber(isNumber)
+                .setNotNull(notNull)
                 .setType("String")
                 .setSetter("set" + WordUtils.capitalize(fieldName))
                 .setGetter("get" + WordUtils.capitalize(fieldName));
         return prop;
+    }
+
+    private String getTitleWithoutAttributes(String title) {
+        return title.indexOf(":") >= 0 ? title.substring(0, title.indexOf(":")) : title;
+
+    }
+
+    private String getTitleAttribute(String title) {
+        return title.indexOf(":") >= 0 ? title.substring(title.indexOf(":")) : "";
+    }
+
+    private boolean notNull(String title) {
+        // if title's attribute part has "n", notNull = true
+        return getTitleAttribute(title).contains("n");
+    }
+
+    private boolean isNumber(String title) {
+        // if title's attribute part has "d", isNumber = true
+        return getTitleAttribute(title).contains("d");
     }
 
     private String createClassNameFromTableName(String tableName) {
@@ -145,12 +169,14 @@ public class SchemaGenerator {
     }
 
     private String createSqliteNameFromTitle(String title) {
-        return String.join("_", split(title)).toUpperCase();
+        String titleWithoutAttributes = title.indexOf(":") >= 0 ? title.substring(0, title.indexOf(":")) : title;
+        return String.join("_", split(titleWithoutAttributes.replace("A/C", "AC"))).toUpperCase();
     }
 
     private String createFieldNameFromTitle(String title) {
+        String titleWithoutAttributes = title.indexOf(":") >= 0 ? title.substring(0, title.indexOf(":")) : title;
         StringBuilder sb = new StringBuilder();
-        for (String t : split(title)) {
+        for (String t : split(titleWithoutAttributes.replace("A/C", "AC"))) {
             sb.append(WordUtils.capitalize(t.toLowerCase()));
         }
         return WordUtils.uncapitalize(sb.toString());
@@ -169,11 +195,11 @@ public class SchemaGenerator {
     }
 
     private String getDbFile(CsvFile file) {
-        return getFileBaseName(file).toLowerCase() + ".sqlite";
+        return file.getTableName() + ".sqlite";
     }
 
     private String getTableName(CsvFile file) {
-        return getFileBaseName(file).toLowerCase();
+        return file.getTableName(); //getFileBaseName(file).toLowerCase();
     }
 
     private String getFileBaseName(CsvFile file) {
@@ -187,6 +213,7 @@ public class SchemaGenerator {
 
     static class CsvFile {
         private String fileName;
+        private String tableName;
         private boolean hasTitle = true;
         private String delimiter = ",";
         private List<String> titles = Lists.newArrayList();
@@ -224,6 +251,15 @@ public class SchemaGenerator {
 
         public CsvFile setDelimiter(String delimiter) {
             this.delimiter = delimiter;
+            return this;
+        }
+
+        public String getTableName() {
+            return tableName;
+        }
+
+        public CsvFile setTableName(String tableName) {
+            this.tableName = tableName;
             return this;
         }
     }

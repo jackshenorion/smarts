@@ -12,29 +12,32 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "bi_omni_code_info_sfc.sqlite",
-      "tableName" : "bi_omni_code_info_sfc"
+      "dbFile" : "bi_omni_code_info.sqlite",
+      "tableName" : "bi_omni_code_info"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_bi_omni_code_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_bi_omni_code_info.xml"
     },
     "pojo" : {
-      "className" : "BiOmniCodeInfoSfc",
+      "className" : "BiOmniCodeInfo",
       "props" : [ {
         "csvName" : "BI/Omni Code",
         "sqliteName" : "BI_OMNI_CODE",
         "name" : "biOmniCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "BI Name",
         "sqliteName" : "BI_NAME",
         "name" : "biName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "PDR Cat",
         "sqliteName" : "PDR_CAT",
         "name" : "pdrCat",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -46,24 +49,26 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "ep_info_sfc.sqlite",
-      "tableName" : "ep_info_sfc"
+      "dbFile" : "ep_info.sqlite",
+      "tableName" : "ep_info"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_ep_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_ep_info.xml"
     },
     "pojo" : {
-      "className" : "EpInfoSfc",
+      "className" : "EpInfo",
       "props" : [ {
         "csvName" : "EP Code",
         "sqliteName" : "EP_CODE",
         "name" : "epCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "EP Name",
         "sqliteName" : "EP_NAME",
         "name" : "epName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -75,59 +80,68 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "ep_oi_sfc.sqlite",
-      "tableName" : "ep_oi_sfc"
+      "dbFile" : "ep_oi.sqlite",
+      "tableName" : "ep_oi"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_ep_oi_sfc.xml"
+      "fileName" : "hksqlgw_loader_ep_oi.xml"
     },
     "pojo" : {
-      "className" : "EpOiSfc",
+      "className" : "EpOi",
       "props" : [ {
         "csvName" : "Trade Date",
         "sqliteName" : "TRADE_DATE",
         "name" : "tradeDate",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "EP Code",
         "sqliteName" : "EP_CODE",
         "name" : "epCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "EP Name",
         "sqliteName" : "EP_NAME",
         "name" : "epName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Product Code",
         "sqliteName" : "PRODUCT_CODE",
         "name" : "productCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Strike",
         "sqliteName" : "STRIKE",
         "name" : "strike",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Option Type",
         "sqliteName" : "OPTION_TYPE",
         "name" : "optionType",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Contract Month",
         "sqliteName" : "CONTRACT_MONTH",
         "name" : "contractMonth",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "EP OI Total Long",
         "sqliteName" : "EP_OI_TOTAL_LONG",
         "name" : "epOiTotalLong",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "EP OI Total Short",
         "sqliteName" : "EP_OI_TOTAL_SHORT",
         "name" : "epOiTotalShort",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       } ]
     }
   }, {
@@ -139,79 +153,92 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "lop_to_bi_code_to_sfc.sqlite",
-      "tableName" : "lop_to_bi_code_to_sfc"
+      "dbFile" : "lop_to_bi_code.sqlite",
+      "tableName" : "lop_to_bi_code"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_lop_to_bi_code_to_sfc.xml"
+      "fileName" : "hksqlgw_loader_lop_to_bi_code.xml"
     },
     "pojo" : {
-      "className" : "LopToBiCodeToSfc",
+      "className" : "LopToBiCode",
       "props" : [ {
         "csvName" : "TO Code",
         "sqliteName" : "TO_CODE",
         "name" : "toCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Hidden_TO",
         "sqliteName" : "HIDDEN_TO",
         "name" : "hiddenTo",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Assigned TO Name",
         "sqliteName" : "ASSIGNED_TO_NAME",
         "name" : "assignedToName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "EP Code",
         "sqliteName" : "EP_CODE",
         "name" : "epCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "A/C No",
-        "sqliteName" : "A_C_NO",
-        "name" : "aCNo",
-        "isNumber" : false
+        "sqliteName" : "AC_NO",
+        "name" : "acNo",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "A/C Name",
-        "sqliteName" : "A_C_NAME",
-        "name" : "aCName",
-        "isNumber" : false
+        "sqliteName" : "AC_NAME",
+        "name" : "acName",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Reported BI Name",
         "sqliteName" : "REPORTED_BI_NAME",
         "name" : "reportedBiName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Reported TO Name",
         "sqliteName" : "REPORTED_TO_NAME",
         "name" : "reportedToName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "TO BI Code",
         "sqliteName" : "TO_BI_CODE",
         "name" : "toBiCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Assigned BI Name",
         "sqliteName" : "ASSIGNED_BI_NAME",
         "name" : "assignedBiName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Watch",
         "sqliteName" : "WATCH",
         "name" : "watch",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Creation Date",
         "sqliteName" : "CREATION_DATE",
         "name" : "creationDate",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Remark",
         "sqliteName" : "REMARK",
         "name" : "remark",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -223,64 +250,74 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "lop_ac_info_sfc.sqlite",
-      "tableName" : "lop_ac_info_sfc"
+      "dbFile" : "lop_ac_info.sqlite",
+      "tableName" : "lop_ac_info"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_lop_ac_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_lop_ac_info.xml"
     },
     "pojo" : {
-      "className" : "LopAcInfoSfc",
+      "className" : "LopAcInfo",
       "props" : [ {
         "csvName" : "EP Code",
         "sqliteName" : "EP_CODE",
         "name" : "epCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_A_C_NO",
-        "name" : "lopACNo",
-        "isNumber" : false
+        "sqliteName" : "LOP_AC_NO",
+        "name" : "lopAcNo",
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "A/C Name",
-        "sqliteName" : "A_C_NAME",
-        "name" : "aCName",
-        "isNumber" : false
+        "sqliteName" : "AC_NAME",
+        "name" : "acName",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Reported BI Name",
         "sqliteName" : "REPORTED_BI_NAME",
         "name" : "reportedBiName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Reported TO Name",
         "sqliteName" : "REPORTED_TO_NAME",
         "name" : "reportedToName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "BI/Omni Code",
         "sqliteName" : "BI_OMNI_CODE",
         "name" : "biOmniCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "BI Name",
         "sqliteName" : "BI_NAME",
         "name" : "biName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Mother BI/Omni Code",
         "sqliteName" : "MOTHER_BI_OMNI_CODE",
         "name" : "motherBiOmniCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "BI TO Code",
         "sqliteName" : "BI_TO_CODE",
         "name" : "biToCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "BI TO Name",
         "sqliteName" : "BI_TO_NAME",
         "name" : "biToName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -292,84 +329,98 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "lop_data_sfc.sqlite",
-      "tableName" : "lop_data_sfc"
+      "dbFile" : "lop_data.sqlite",
+      "tableName" : "lop_data"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_lop_data_sfc.xml"
+      "fileName" : "hksqlgw_loader_lop_data.xml"
     },
     "pojo" : {
-      "className" : "LopDataSfc",
+      "className" : "LopData",
       "props" : [ {
         "csvName" : "Trade Date",
         "sqliteName" : "TRADE_DATE",
         "name" : "tradeDate",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "EP Code",
         "sqliteName" : "EP_CODE",
         "name" : "epCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_A_C_NO",
-        "name" : "lopACNo",
-        "isNumber" : false
+        "sqliteName" : "LOP_AC_NO",
+        "name" : "lopAcNo",
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "BI/Omni Code",
         "sqliteName" : "BI_OMNI_CODE",
         "name" : "biOmniCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "BI TO Code",
         "sqliteName" : "BI_TO_CODE",
         "name" : "biToCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "A/C Nature",
-        "sqliteName" : "A_C_NATURE",
-        "name" : "aCNature",
-        "isNumber" : false
+        "sqliteName" : "AC_NATURE",
+        "name" : "acNature",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "A/C Type",
-        "sqliteName" : "A_C_TYPE",
-        "name" : "aCType",
-        "isNumber" : false
+        "sqliteName" : "AC_TYPE",
+        "name" : "acType",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Product Code",
         "sqliteName" : "PRODUCT_CODE",
         "name" : "productCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Strike",
         "sqliteName" : "STRIKE",
         "name" : "strike",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Option Type",
         "sqliteName" : "OPTION_TYPE",
         "name" : "optionType",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Contract Month",
         "sqliteName" : "CONTRACT_MONTH",
         "name" : "contractMonth",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "LOP OI Long",
         "sqliteName" : "LOP_OI_LONG",
         "name" : "lopOiLong",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "LOP OI Short",
         "sqliteName" : "LOP_OI_SHORT",
         "name" : "lopOiShort",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "LOP PD",
         "sqliteName" : "LOP_PD",
         "name" : "lopPd",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       } ]
     }
   }, {
@@ -393,17 +444,20 @@
         "csvName" : "Date",
         "sqliteName" : "DATE",
         "name" : "date",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Product",
         "sqliteName" : "PRODUCT",
         "name" : "product",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "GPD Value",
         "sqliteName" : "GPD_VALUE",
         "name" : "gpdValue",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -415,44 +469,50 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "market_oi_sfc.sqlite",
-      "tableName" : "market_oi_sfc"
+      "dbFile" : "market_oi.sqlite",
+      "tableName" : "market_oi"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_market_oi_sfc.xml"
+      "fileName" : "hksqlgw_loader_market_oi.xml"
     },
     "pojo" : {
-      "className" : "MarketOiSfc",
+      "className" : "MarketOi",
       "props" : [ {
         "csvName" : "Trade Date",
         "sqliteName" : "TRADE_DATE",
         "name" : "tradeDate",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Product Code",
         "sqliteName" : "PRODUCT_CODE",
         "name" : "productCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Strike",
         "sqliteName" : "STRIKE",
         "name" : "strike",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Option Type",
         "sqliteName" : "OPTION_TYPE",
         "name" : "optionType",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Contract Month",
         "sqliteName" : "CONTRACT_MONTH",
         "name" : "contractMonth",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Market OI by Series",
         "sqliteName" : "MARKET_OI_BY_SERIES",
         "name" : "marketOiBySeries",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       } ]
     }
   }, {
@@ -464,24 +524,26 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "to_code_info_sfc.sqlite",
-      "tableName" : "to_code_info_sfc"
+      "dbFile" : "to_code_info.sqlite",
+      "tableName" : "to_code_info"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_to_code_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_to_code_info.xml"
     },
     "pojo" : {
-      "className" : "ToCodeInfoSfc",
+      "className" : "ToCodeInfo",
       "props" : [ {
         "csvName" : "TO Code",
         "sqliteName" : "TO_CODE",
         "name" : "toCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "TO Name",
         "sqliteName" : "TO_NAME",
         "name" : "toName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -493,49 +555,56 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "to_lop_ac_info_sfc.sqlite",
-      "tableName" : "to_lop_ac_info_sfc"
+      "dbFile" : "to_lop_ac_info.sqlite",
+      "tableName" : "to_lop_ac_info"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_to_lop_ac_info_sfc.xml"
+      "fileName" : "hksqlgw_loader_to_lop_ac_info.xml"
     },
     "pojo" : {
-      "className" : "ToLopAcInfoSfc",
+      "className" : "ToLopAcInfo",
       "props" : [ {
         "csvName" : "TO Code",
         "sqliteName" : "TO_CODE",
         "name" : "toCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_A_C_NO",
-        "name" : "lopACNo",
-        "isNumber" : false
+        "sqliteName" : "LOP_AC_NO",
+        "name" : "lopAcNo",
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "A/C Name",
-        "sqliteName" : "A_C_NAME",
-        "name" : "aCName",
-        "isNumber" : false
+        "sqliteName" : "AC_NAME",
+        "name" : "acName",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Reported BI Name",
         "sqliteName" : "REPORTED_BI_NAME",
         "name" : "reportedBiName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Reported TO Name",
         "sqliteName" : "REPORTED_TO_NAME",
         "name" : "reportedToName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "TO BI Code",
         "sqliteName" : "TO_BI_CODE",
         "name" : "toBiCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "TO BI Name",
         "sqliteName" : "TO_BI_NAME",
         "name" : "toBiName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       } ]
     }
   }, {
@@ -547,178 +616,310 @@
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "to_lop_data_sfc.sqlite",
-      "tableName" : "to_lop_data_sfc"
+      "dbFile" : "to_lop_data.sqlite",
+      "tableName" : "to_lop_data"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_to_lop_data_sfc.xml"
+      "fileName" : "hksqlgw_loader_to_lop_data.xml"
     },
     "pojo" : {
-      "className" : "ToLopDataSfc",
+      "className" : "ToLopData",
       "props" : [ {
         "csvName" : "Trade Date",
         "sqliteName" : "TRADE_DATE",
         "name" : "tradeDate",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "TO Code",
         "sqliteName" : "TO_CODE",
         "name" : "toCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "EP Code",
         "sqliteName" : "EP_CODE",
         "name" : "epCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_A_C_NO",
-        "name" : "lopACNo",
-        "isNumber" : false
+        "sqliteName" : "LOP_AC_NO",
+        "name" : "lopAcNo",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "A/C Type",
-        "sqliteName" : "A_C_TYPE",
-        "name" : "aCType",
-        "isNumber" : false
+        "sqliteName" : "AC_TYPE",
+        "name" : "acType",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "A/C Nature",
-        "sqliteName" : "A_C_NATURE",
-        "name" : "aCNature",
-        "isNumber" : false
+        "sqliteName" : "AC_NATURE",
+        "name" : "acNature",
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Product Code",
         "sqliteName" : "PRODUCT_CODE",
         "name" : "productCode",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Strike",
         "sqliteName" : "STRIKE",
         "name" : "strike",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Option Type",
         "sqliteName" : "OPTION_TYPE",
         "name" : "optionType",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Contract Month",
         "sqliteName" : "CONTRACT_MONTH",
         "name" : "contractMonth",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "LOP OI Long",
         "sqliteName" : "LOP_OI_LONG",
         "name" : "lopOiLong",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "LOP OI Short",
         "sqliteName" : "LOP_OI_SHORT",
         "name" : "lopOiShort",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "LOP PD",
         "sqliteName" : "LOP_PD",
         "name" : "lopPd",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       } ]
     }
   }, {
-    "description" : "Converts tp001_o to Sqlite",
+    "description" : "Converts TP001_o_Position to Sqlite",
     "csv" : {
-      "midfix" : ".tp001_o",
+      "midfix" : ".tp001_o_position",
       "format" : "raw",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "tp001_o.sqlite",
-      "tableName" : "tp001_o"
+      "dbFile" : "tp001_o_position.sqlite",
+      "tableName" : "tp001_o_position"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_tp001_o.xml"
+      "fileName" : "hksqlgw_loader_tp001_o_position.xml"
     },
     "pojo" : {
-      "className" : "Tp001O",
+      "className" : "Tp001OPosition",
       "props" : [ {
         "csvName" : "Member",
         "sqliteName" : "MEMBER",
         "name" : "member",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Account No.",
         "sqliteName" : "ACCOUNT_NO",
         "name" : "accountNo",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Instrument",
         "sqliteName" : "INSTRUMENT",
         "name" : "instrument",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : true
       }, {
         "csvName" : "Member Name",
         "sqliteName" : "MEMBER_NAME",
         "name" : "memberName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Market",
         "sqliteName" : "MARKET",
         "name" : "market",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Market Name",
         "sqliteName" : "MARKET_NAME",
         "name" : "marketName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Underlying",
         "sqliteName" : "UNDERLYING",
         "name" : "underlying",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Underlying Name",
         "sqliteName" : "UNDERLYING_NAME",
         "name" : "underlyingName",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Currency",
         "sqliteName" : "CURRENCY",
         "name" : "currency",
-        "isNumber" : false
+        "isNumber" : false,
+        "notNull" : false
       }, {
         "csvName" : "Prev Position - Long",
         "sqliteName" : "PREV_POSITION_LONG",
         "name" : "prevPositionLong",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "Prev Position - Short",
         "sqliteName" : "PREV_POSITION_SHORT",
         "name" : "prevPositionShort",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "Prev Settlement Price",
         "sqliteName" : "PREV_SETTLEMENT_PRICE",
         "name" : "prevSettlementPrice",
-        "isNumber" : false
-      }, {
-        "csvName" : "Prev Variation Adjustment",
-        "sqliteName" : "PREV_VARIATION_ADJUSTMENT",
-        "name" : "prevVariationAdjustment",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "Current Position - Long",
         "sqliteName" : "CURRENT_POSITION_LONG",
         "name" : "currentPositionLong",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "Current Position - Short",
         "sqliteName" : "CURRENT_POSITION_SHORT",
         "name" : "currentPositionShort",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
       }, {
         "csvName" : "Current Settlement Price",
         "sqliteName" : "CURRENT_SETTLEMENT_PRICE",
         "name" : "currentSettlementPrice",
-        "isNumber" : false
+        "isNumber" : true,
+        "notNull" : false
+      } ]
+    }
+  }, {
+    "description" : "Converts TP001_f_Position to Sqlite",
+    "csv" : {
+      "midfix" : ".tp001_f_position",
+      "format" : "raw",
+      "delimiter" : ",",
+      "ignoreHeaderLine" : true
+    },
+    "sqlite" : {
+      "dbFile" : "tp001_f_position.sqlite",
+      "tableName" : "tp001_f_position"
+    },
+    "converter" : {
+      "fileName" : "hksqlgw_loader_tp001_f_position.xml"
+    },
+    "pojo" : {
+      "className" : "Tp001FPosition",
+      "props" : [ {
+        "csvName" : "Member",
+        "sqliteName" : "MEMBER",
+        "name" : "member",
+        "isNumber" : false,
+        "notNull" : true
+      }, {
+        "csvName" : "Account No.",
+        "sqliteName" : "ACCOUNT_NO",
+        "name" : "accountNo",
+        "isNumber" : false,
+        "notNull" : true
+      }, {
+        "csvName" : "Instrument",
+        "sqliteName" : "INSTRUMENT",
+        "name" : "instrument",
+        "isNumber" : false,
+        "notNull" : true
+      }, {
+        "csvName" : "Member Name",
+        "sqliteName" : "MEMBER_NAME",
+        "name" : "memberName",
+        "isNumber" : false,
+        "notNull" : false
+      }, {
+        "csvName" : "Market",
+        "sqliteName" : "MARKET",
+        "name" : "market",
+        "isNumber" : false,
+        "notNull" : false
+      }, {
+        "csvName" : "Market Name",
+        "sqliteName" : "MARKET_NAME",
+        "name" : "marketName",
+        "isNumber" : false,
+        "notNull" : false
+      }, {
+        "csvName" : "Underlying",
+        "sqliteName" : "UNDERLYING",
+        "name" : "underlying",
+        "isNumber" : false,
+        "notNull" : false
+      }, {
+        "csvName" : "Underlying Name",
+        "sqliteName" : "UNDERLYING_NAME",
+        "name" : "underlyingName",
+        "isNumber" : false,
+        "notNull" : false
+      }, {
+        "csvName" : "Currency",
+        "sqliteName" : "CURRENCY",
+        "name" : "currency",
+        "isNumber" : false,
+        "notNull" : false
+      }, {
+        "csvName" : "Prev Position - Long",
+        "sqliteName" : "PREV_POSITION_LONG",
+        "name" : "prevPositionLong",
+        "isNumber" : true,
+        "notNull" : false
+      }, {
+        "csvName" : "Prev Position - Short",
+        "sqliteName" : "PREV_POSITION_SHORT",
+        "name" : "prevPositionShort",
+        "isNumber" : true,
+        "notNull" : false
+      }, {
+        "csvName" : "Prev Settlement Price",
+        "sqliteName" : "PREV_SETTLEMENT_PRICE",
+        "name" : "prevSettlementPrice",
+        "isNumber" : true,
+        "notNull" : false
+      }, {
+        "csvName" : "Current Position - Long",
+        "sqliteName" : "CURRENT_POSITION_LONG",
+        "name" : "currentPositionLong",
+        "isNumber" : true,
+        "notNull" : false
+      }, {
+        "csvName" : "Current Position - Short",
+        "sqliteName" : "CURRENT_POSITION_SHORT",
+        "name" : "currentPositionShort",
+        "isNumber" : true,
+        "notNull" : false
+      }, {
+        "csvName" : "Current Settlement Price",
+        "sqliteName" : "CURRENT_SETTLEMENT_PRICE",
+        "name" : "currentSettlementPrice",
+        "isNumber" : true,
+        "notNull" : false
       } ]
     }
   } ]

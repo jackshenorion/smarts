@@ -21,7 +21,7 @@
     <input name="csvIn" className="${processInput}">
         <property name="fieldDelimiter">${delimiter}</property>
         <property name="ignoreHeaderLine">${ignoreHeaderLine}</property>
-        <property name="ignoreLinesStartingWith">,,</property>
+        <property name="ignoreLinesStartingWith">"T",</property>
         <property name="beanClass">${pojoClassPath}</property>
         <optional>true</optional>
         <filePattern>

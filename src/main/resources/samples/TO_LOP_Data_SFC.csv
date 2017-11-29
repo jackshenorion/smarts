@@ -1,4 +1,4 @@
-"Trade Date","TO Code","EP Code","LOP A/C No","A/C Type","A/C Nature","Product Code","Strike","Option Type","Contract Month","LOP OI Long","LOP OI Short","LOP PD"
+"Trade Date:n","TO Code:n","EP Code:n","LOP A/C No","A/C Type","A/C Nature","Product Code","Strike","Option Type","Contract Month","LOP OI Long:d","LOP OI Short:d","LOP PD:d"
 "23-12-2016","TOT_0015","CFB","YZOCQ","C","T","DHH",""," ","12/2017","","150",""
 "23-12-2016","TOT_0050","CFB","YJXOE","C","T","DHH",""," ","12/2018","500","",""
 "23-12-2016","TOT_0050","CFB","YMHTZ","C","T","DHH",""," ","12/2018","500","",""
