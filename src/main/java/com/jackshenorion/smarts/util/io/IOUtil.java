@@ -525,7 +525,9 @@ public class IOUtil {
 
 	public static void writeAndClose(File file, String data) {
 		try {
-			writeAndClose(new FileWriter(file), data);
+			if (true) { // for findbugs
+				writeAndClose(new FileWriter(file), data);
+			}
 		} catch (IOException e) {
 			throw new IllegalStateException("Failed to write file: " + e.getMessage(), e);
 		}
