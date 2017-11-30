@@ -13,6 +13,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'findbugs'
 
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
@@ -21,6 +22,19 @@ repositories {
 	mavenCentral()
 }
 
+
+findbugs {
+	ignoreFailures = true
+	findbugsTest.enabled = false
+}
+findbugsMain {
+	reports {
+		xml.enabled = true
+		html.enabled = false
+		xml.destination "$project.buildDir/reports/findbugs/findbugs-output.xml"
+		html.destination "$project.buildDir/reports/findbugs/findbugs-output.html"
+	}
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-jersey')
