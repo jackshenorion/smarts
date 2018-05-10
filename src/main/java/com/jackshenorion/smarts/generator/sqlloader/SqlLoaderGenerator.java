@@ -89,7 +89,6 @@ public class SqlLoaderGenerator {
 
     private void enhancePojo(SqlLoaderPojo pojo) {
         pojo.getProps().forEach(prop -> {
-            prop.setType(prop.getIsNumber() ? "double" : "String");
             prop.setSetter("set" + WordUtils.capitalize(prop.getName()));
             prop.setGetter("get" + WordUtils.capitalize(prop.getName()));
         });

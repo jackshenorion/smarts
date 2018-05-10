@@ -27,19 +27,20 @@ public class SchemaGenerator {
 
     public static void main(String[] args) throws IOException {
         new SchemaGenerator().createSchema(Arrays.asList(
-                new CsvFile().setFileName("BI_Omni_Code_Info_SFC.csv").setTableName("bi_omni_code_info"),
-                new CsvFile().setFileName("EP_Info_SFC.csv").setTableName("ep_info"),
-                new CsvFile().setFileName("EP_OI_SFC.csv").setTableName("ep_oi"),
-                new CsvFile().setFileName("LOP TO BI CODE TO SFC.csv").setTableName("lop_to_bi_code"),
-                new CsvFile().setFileName("LOP_AC_Info_SFC.csv").setTableName("lop_ac_info"),
-                new CsvFile().setFileName("LOP_Data_SFC.csv").setTableName("lop_data"),
-                new CsvFile().setFileName("Market_GPD.csv").setTableName("market_gpd"),
-                new CsvFile().setFileName("Market_OI_SFC.csv").setTableName("market_oi"),
-                new CsvFile().setFileName("TO_Code_Info_SFC.csv").setTableName("to_code_info"),
-                new CsvFile().setFileName("TO_LOP_AC_Info_SFC.csv").setTableName("to_lop_ac_info"),
-                new CsvFile().setFileName("TO_LOP_Data_SFC.csv").setTableName("to_lop_data"),
-                new CsvFile().setFileName("TP001_o_Position.raw").setTableName("tp001_o_position"),
-                new CsvFile().setFileName("TP001_f_Position.raw").setTableName("tp001_f_position")
+                new CsvFile().setFileName("CA11ITEM.csv").setTableName("ca11item")
+//                new CsvFile().setFileName("BI_Omni_Code_Info_SFC.csv").setTableName("bi_omni_code_info"),
+//                new CsvFile().setFileName("EP_Info_SFC.csv").setTableName("ep_info"),
+//                new CsvFile().setFileName("EP_OI_SFC.csv").setTableName("ep_oi"),
+//                new CsvFile().setFileName("LOP TO BI CODE TO SFC.csv").setTableName("lop_to_bi_code"),
+//                new CsvFile().setFileName("LOP_AC_Info_SFC.csv").setTableName("lop_ac_info"),
+//                new CsvFile().setFileName("LOP_Data_SFC.csv").setTableName("lop_data"),
+//                new CsvFile().setFileName("Market_GPD.csv").setTableName("market_gpd"),
+//                new CsvFile().setFileName("Market_OI_SFC.csv").setTableName("market_oi"),
+//                new CsvFile().setFileName("TO_Code_Info_SFC.csv").setTableName("to_code_info"),
+//                new CsvFile().setFileName("TO_LOP_AC_Info_SFC.csv").setTableName("to_lop_ac_info"),
+//                new CsvFile().setFileName("TO_LOP_Data_SFC.csv").setTableName("to_lop_data"),
+//                new CsvFile().setFileName("TP001_o_Position.raw").setTableName("tp001_o_position"),
+//                new CsvFile().setFileName("TP001_f_Position.raw").setTableName("tp001_f_position")
         ));
     }
 
@@ -127,15 +128,17 @@ public class SchemaGenerator {
     private SqlLoaderPojoProperty createPojoProperty(String title) {
         SqlLoaderPojoProperty prop = new SqlLoaderPojoProperty();
         String fieldName = createFieldNameFromTitle(title);
-        boolean isNumber = isNumber(title);
+        boolean isDouble = isDouble(title);
+        boolean isLong = isLong(title);
+        boolean isInt = isInt(title);
         boolean notNull = notNull(title);
 
         prop.setCsvName(getTitleWithoutAttributes(title))
                 .setSqliteName(createSqliteNameFromTitle(title))
                 .setName(fieldName)
-                .setIsNumber(isNumber)
+                .setDouble(isDouble)
+                .setLong(isLong)
                 .setNotNull(notNull)
-                .setType("String")
                 .setSetter("set" + WordUtils.capitalize(fieldName))
                 .setGetter("get" + WordUtils.capitalize(fieldName));
         return prop;
@@ -155,9 +158,19 @@ public class SchemaGenerator {
         return getTitleAttribute(title).contains("n");
     }
 
-    private boolean isNumber(String title) {
-        // if title's attribute part has "d", isNumber = true
+    private boolean isDouble(String title) {
+        // if title's attribute part has "d", isDouble = true
         return getTitleAttribute(title).contains("d");
+    }
+
+    private boolean isInt(String title) {
+        // if title's attribute part has "i", isInt = true
+        return getTitleAttribute(title).contains("i");
+    }
+
+    private boolean isLong(String title) {
+        // if title's attribute part has "L", isLong = true
+        return getTitleAttribute(title).contains("L");
     }
 
     private String createClassNameFromTableName(String tableName) {
@@ -170,7 +183,17 @@ public class SchemaGenerator {
 
     private String createSqliteNameFromTitle(String title) {
         String titleWithoutAttributes = title.indexOf(":") >= 0 ? title.substring(0, title.indexOf(":")) : title;
-        return String.join("_", split(titleWithoutAttributes.replace("A/C", "AC"))).toUpperCase();
+        return sqliteFieldNameCustom(String.join("_", split(titleWithoutAttributes.replace("A/C", "AC"))).toUpperCase());
+    }
+
+    private String sqliteFieldNameCustom(String sqliteFieldName) {
+        if (sqliteFieldName.toLowerCase().equals("date")) {
+            return "DATE1";
+        } else if (sqliteFieldName.toLowerCase().equals("hidden_to")) {
+            return "HIDDEN";
+        } else {
+            return sqliteFieldName;
+        }
     }
 
     private String createFieldNameFromTitle(String title) {

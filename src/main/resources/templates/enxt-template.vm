@@ -1,0 +1,57 @@
+#set($props = ${smarts.props})
+
+#foreach (${prop} in ${props})
+OEGConverterMinMemory.${prop.partitionName}=256
+OEGConverterMaxMemory.${prop.partitionName}=4096
+#end
+
+#foreach (${prop} in ${props})
+#[[#]]#
+#[[#]]# Settings for OEG DC Partition, Logical Access Id: ${prop.accessId} OE Partition Id: ${prop.partitionId}
+#[[#]]#
+
+[OEGListener.${prop.partitionName}]
+jobClass=JavaRunner
+libsDir=%SMARTSGATEWAYS%/enxtoegl/lib
+mainClass=com.nasdaq.surveillance.listener.enxt.oeg.MainKt
+jvmArgs=-server -Xmx%OEGListenerMaxMemoryMB%m -Xms%OEGListenerMinMemoryMB%m -Djava.util.logging.config.file=%SMARTSCONFIG%/gateways/enxtoegl/logging.properties
+javaParams=%SMARTSCONFIG%/gateways/enxtoegl/${prop.partitionName}.config
+background = true
+stopTime=21:59:00
+
+[OEGConverter.${prop.partitionName}]
+jobClass=Converter
+package=enxtoegc
+processConfig=${prop.partitionName}.xml
+market=%MARKET%
+startOutput=%SMARTSDATA%/%MARKET%/track/%YYYY%/%MM%/%YYYYMMDD%.${prop.partitionName}.fav[.gz]
+Xms=%OEGConverterMinMemory.${prop.partitionName}%
+Xmx=%OEGConverterMaxMemory.${prop.partitionName}%
+background = true
+
+[WaitOnOEGListener.${prop.partitionName}]
+jobClass=WaitOnJob
+waitJob=OEGListener.${prop.partitionName}
+
+[WaitOnOEGConverter.${prop.partitionName}]
+jobClass=WaitOnJob
+waitJob=OEGConverter.${prop.partitionName}
+
+[WaitForOegListenerRaw.${prop.partitionName}]
+jobClass=WaitOnFile
+waitFile=%SMARTSDATA%/%MARKET%/raw/%YYYY%/%MM%/%YYYYMMDD%.${prop.partitionName}.srf[.gz]
+waitPeriod=180 mins
+sleepPeriod=60
+
+[WaitForOegConverterFav.${prop.partitionName}]
+jobClass=WaitOnFile
+waitFile=%SMARTSDATA%/%MARKET%/track/%YYYY%/%MM%/%YYYYMMDD%.${prop.partitionName}.fav[.gz]
+waitPeriod=180 mins
+sleepPeriod=60
+
+[GzipRawFiles.${prop.partitionName}]
+jobClass = Gzip
+include = %SMARTSDATA%/%MARKET%/raw/%YYYY%/%MM%/%YYYYMMDD%.${prop.partitionName}.srf
+background = true
+
+#end

@@ -6,10 +6,10 @@ public class SqlLoaderPojoProperty {
     private String csvName;
     private String sqliteName;
     private String name;
-    private boolean isNumber;
+    private boolean isDouble;
+    private boolean isLong;
+    private boolean isInt;
     private boolean notNull;
-    @JsonIgnore
-    private String type;
     @JsonIgnore
     private String setter;
     @JsonIgnore
@@ -24,21 +24,30 @@ public class SqlLoaderPojoProperty {
         return this;
     }
 
-    public String getType() {
-        return type;
+    public boolean isDouble() {
+        return isDouble;
     }
 
-    public SqlLoaderPojoProperty setType(String type) {
-        this.type = type;
+    public SqlLoaderPojoProperty setDouble(boolean aDouble) {
+        isDouble = aDouble;
         return this;
     }
 
-    public boolean getIsNumber() {
-        return isNumber;
+    public boolean isLong() {
+        return isLong;
     }
 
-    public SqlLoaderPojoProperty setIsNumber(boolean number) {
-        isNumber = number;
+    public SqlLoaderPojoProperty setLong(boolean aLong) {
+        isLong = aLong;
+        return this;
+    }
+
+    public boolean isInt() {
+        return isInt;
+    }
+
+    public SqlLoaderPojoProperty setInt(boolean anInt) {
+        isInt = anInt;
         return this;
     }
 
@@ -90,11 +99,12 @@ public class SqlLoaderPojoProperty {
     @Override
     public String toString() {
         return "SqlLoaderPojoProperty{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", isNumber=" + isNumber +
-                ", csvName='" + csvName + '\'' +
+                "csvName='" + csvName + '\'' +
                 ", sqliteName='" + sqliteName + '\'' +
+                ", name='" + name + '\'' +
+                ", isDouble=" + isDouble +
+                ", isLong=" + isLong +
+                ", notNull=" + notNull +
                 ", setter='" + setter + '\'' +
                 ", getter='" + getter + '\'' +
                 '}';

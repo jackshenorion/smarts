@@ -4,922 +4,966 @@
   "feedletClass" : "com.smartsgroup.lib.sqlite.SqlLoaderFeedlet",
   "javaPackage" : "com.smartsgroup.connectors.hksqlgw.feedlets.lookup",
   "tables" : [ {
-    "description" : "Converts BI_Omni_Code_Info_SFC to Sqlite",
+    "description" : "Converts CA11ITEM to Sqlite",
     "csv" : {
-      "midfix" : ".bi_omni_code_info_sfc",
+      "midfix" : ".ca11item",
       "format" : "csv",
       "delimiter" : ",",
       "ignoreHeaderLine" : true
     },
     "sqlite" : {
-      "dbFile" : "bi_omni_code_info.sqlite",
-      "tableName" : "bi_omni_code_info"
+      "dbFile" : "ca11item.sqlite",
+      "tableName" : "ca11item"
     },
     "converter" : {
-      "fileName" : "hksqlgw_loader_bi_omni_code_info.xml"
+      "fileName" : "hksqlgw_loader_ca11item.xml"
     },
     "pojo" : {
-      "className" : "BiOmniCodeInfo",
+      "className" : "Ca11item",
       "props" : [ {
-        "csvName" : "BI/Omni Code",
-        "sqliteName" : "BI_OMNI_CODE",
-        "name" : "biOmniCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "BI Name",
-        "sqliteName" : "BI_NAME",
-        "name" : "biName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "PDR Cat",
-        "sqliteName" : "PDR_CAT",
-        "name" : "pdrCat",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts EP_Info_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".ep_info_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "ep_info.sqlite",
-      "tableName" : "ep_info"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_ep_info.xml"
-    },
-    "pojo" : {
-      "className" : "EpInfo",
-      "props" : [ {
-        "csvName" : "EP Code",
-        "sqliteName" : "EP_CODE",
-        "name" : "epCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "EP Name",
-        "sqliteName" : "EP_NAME",
-        "name" : "epName",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts EP_OI_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".ep_oi_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "ep_oi.sqlite",
-      "tableName" : "ep_oi"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_ep_oi.xml"
-    },
-    "pojo" : {
-      "className" : "EpOi",
-      "props" : [ {
-        "csvName" : "Trade Date",
-        "sqliteName" : "TRADE_DATE",
-        "name" : "tradeDate",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "EP Code",
-        "sqliteName" : "EP_CODE",
-        "name" : "epCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "EP Name",
-        "sqliteName" : "EP_NAME",
-        "name" : "epName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Product Code",
-        "sqliteName" : "PRODUCT_CODE",
-        "name" : "productCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Strike",
-        "sqliteName" : "STRIKE",
-        "name" : "strike",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Option Type",
-        "sqliteName" : "OPTION_TYPE",
-        "name" : "optionType",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Contract Month",
-        "sqliteName" : "CONTRACT_MONTH",
-        "name" : "contractMonth",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "EP OI Total Long",
-        "sqliteName" : "EP_OI_TOTAL_LONG",
-        "name" : "epOiTotalLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "EP OI Total Short",
-        "sqliteName" : "EP_OI_TOTAL_SHORT",
-        "name" : "epOiTotalShort",
-        "isNumber" : true,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts LOP TO BI CODE TO SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".lop_to_bi_code_to_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "lop_to_bi_code.sqlite",
-      "tableName" : "lop_to_bi_code"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_lop_to_bi_code.xml"
-    },
-    "pojo" : {
-      "className" : "LopToBiCode",
-      "props" : [ {
-        "csvName" : "TO Code",
-        "sqliteName" : "TO_CODE",
-        "name" : "toCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Hidden_TO",
-        "sqliteName" : "HIDDEN_TO",
-        "name" : "hiddenTo",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Assigned TO Name",
-        "sqliteName" : "ASSIGNED_TO_NAME",
-        "name" : "assignedToName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "EP Code",
-        "sqliteName" : "EP_CODE",
-        "name" : "epCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "A/C No",
-        "sqliteName" : "AC_NO",
-        "name" : "acNo",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "A/C Name",
-        "sqliteName" : "AC_NAME",
-        "name" : "acName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Reported BI Name",
-        "sqliteName" : "REPORTED_BI_NAME",
-        "name" : "reportedBiName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Reported TO Name",
-        "sqliteName" : "REPORTED_TO_NAME",
-        "name" : "reportedToName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "TO BI Code",
-        "sqliteName" : "TO_BI_CODE",
-        "name" : "toBiCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Assigned BI Name",
-        "sqliteName" : "ASSIGNED_BI_NAME",
-        "name" : "assignedBiName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Watch",
-        "sqliteName" : "WATCH",
-        "name" : "watch",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Creation Date",
-        "sqliteName" : "CREATION_DATE",
-        "name" : "creationDate",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Remark",
-        "sqliteName" : "REMARK",
-        "name" : "remark",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts LOP_AC_Info_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".lop_ac_info_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "lop_ac_info.sqlite",
-      "tableName" : "lop_ac_info"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_lop_ac_info.xml"
-    },
-    "pojo" : {
-      "className" : "LopAcInfo",
-      "props" : [ {
-        "csvName" : "EP Code",
-        "sqliteName" : "EP_CODE",
-        "name" : "epCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_AC_NO",
-        "name" : "lopAcNo",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "A/C Name",
-        "sqliteName" : "AC_NAME",
-        "name" : "acName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Reported BI Name",
-        "sqliteName" : "REPORTED_BI_NAME",
-        "name" : "reportedBiName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Reported TO Name",
-        "sqliteName" : "REPORTED_TO_NAME",
-        "name" : "reportedToName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "BI/Omni Code",
-        "sqliteName" : "BI_OMNI_CODE",
-        "name" : "biOmniCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "BI Name",
-        "sqliteName" : "BI_NAME",
-        "name" : "biName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Mother BI/Omni Code",
-        "sqliteName" : "MOTHER_BI_OMNI_CODE",
-        "name" : "motherBiOmniCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "BI TO Code",
-        "sqliteName" : "BI_TO_CODE",
-        "name" : "biToCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "BI TO Name",
-        "sqliteName" : "BI_TO_NAME",
-        "name" : "biToName",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts LOP_Data_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".lop_data_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "lop_data.sqlite",
-      "tableName" : "lop_data"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_lop_data.xml"
-    },
-    "pojo" : {
-      "className" : "LopData",
-      "props" : [ {
-        "csvName" : "Trade Date",
-        "sqliteName" : "TRADE_DATE",
-        "name" : "tradeDate",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "EP Code",
-        "sqliteName" : "EP_CODE",
-        "name" : "epCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_AC_NO",
-        "name" : "lopAcNo",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "BI/Omni Code",
-        "sqliteName" : "BI_OMNI_CODE",
-        "name" : "biOmniCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "BI TO Code",
-        "sqliteName" : "BI_TO_CODE",
-        "name" : "biToCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "A/C Nature",
-        "sqliteName" : "AC_NATURE",
-        "name" : "acNature",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "A/C Type",
-        "sqliteName" : "AC_TYPE",
-        "name" : "acType",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Product Code",
-        "sqliteName" : "PRODUCT_CODE",
-        "name" : "productCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Strike",
-        "sqliteName" : "STRIKE",
-        "name" : "strike",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Option Type",
-        "sqliteName" : "OPTION_TYPE",
-        "name" : "optionType",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Contract Month",
-        "sqliteName" : "CONTRACT_MONTH",
-        "name" : "contractMonth",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "LOP OI Long",
-        "sqliteName" : "LOP_OI_LONG",
-        "name" : "lopOiLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "LOP OI Short",
-        "sqliteName" : "LOP_OI_SHORT",
-        "name" : "lopOiShort",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "LOP PD",
-        "sqliteName" : "LOP_PD",
-        "name" : "lopPd",
-        "isNumber" : true,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts Market_GPD to Sqlite",
-    "csv" : {
-      "midfix" : ".market_gpd",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "market_gpd.sqlite",
-      "tableName" : "market_gpd"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_market_gpd.xml"
-    },
-    "pojo" : {
-      "className" : "MarketGpd",
-      "props" : [ {
-        "csvName" : "Date",
-        "sqliteName" : "DATE",
-        "name" : "date",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Product",
-        "sqliteName" : "PRODUCT",
-        "name" : "product",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "GPD Value",
-        "sqliteName" : "GPD_VALUE",
-        "name" : "gpdValue",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts Market_OI_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".market_oi_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "market_oi.sqlite",
-      "tableName" : "market_oi"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_market_oi.xml"
-    },
-    "pojo" : {
-      "className" : "MarketOi",
-      "props" : [ {
-        "csvName" : "Trade Date",
-        "sqliteName" : "TRADE_DATE",
-        "name" : "tradeDate",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Product Code",
-        "sqliteName" : "PRODUCT_CODE",
-        "name" : "productCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Strike",
-        "sqliteName" : "STRIKE",
-        "name" : "strike",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Option Type",
-        "sqliteName" : "OPTION_TYPE",
-        "name" : "optionType",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Contract Month",
-        "sqliteName" : "CONTRACT_MONTH",
-        "name" : "contractMonth",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Market OI by Series",
-        "sqliteName" : "MARKET_OI_BY_SERIES",
-        "name" : "marketOiBySeries",
-        "isNumber" : true,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts TO_Code_Info_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".to_code_info_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "to_code_info.sqlite",
-      "tableName" : "to_code_info"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_to_code_info.xml"
-    },
-    "pojo" : {
-      "className" : "ToCodeInfo",
-      "props" : [ {
-        "csvName" : "TO Code",
-        "sqliteName" : "TO_CODE",
-        "name" : "toCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "TO Name",
-        "sqliteName" : "TO_NAME",
-        "name" : "toName",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts TO_LOP_AC_Info_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".to_lop_ac_info_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "to_lop_ac_info.sqlite",
-      "tableName" : "to_lop_ac_info"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_to_lop_ac_info.xml"
-    },
-    "pojo" : {
-      "className" : "ToLopAcInfo",
-      "props" : [ {
-        "csvName" : "TO Code",
-        "sqliteName" : "TO_CODE",
-        "name" : "toCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_AC_NO",
-        "name" : "lopAcNo",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "A/C Name",
-        "sqliteName" : "AC_NAME",
-        "name" : "acName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Reported BI Name",
-        "sqliteName" : "REPORTED_BI_NAME",
-        "name" : "reportedBiName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Reported TO Name",
-        "sqliteName" : "REPORTED_TO_NAME",
-        "name" : "reportedToName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "TO BI Code",
-        "sqliteName" : "TO_BI_CODE",
-        "name" : "toBiCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "TO BI Name",
-        "sqliteName" : "TO_BI_NAME",
-        "name" : "toBiName",
-        "isNumber" : false,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts TO_LOP_Data_SFC to Sqlite",
-    "csv" : {
-      "midfix" : ".to_lop_data_sfc",
-      "format" : "csv",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "to_lop_data.sqlite",
-      "tableName" : "to_lop_data"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_to_lop_data.xml"
-    },
-    "pojo" : {
-      "className" : "ToLopData",
-      "props" : [ {
-        "csvName" : "Trade Date",
-        "sqliteName" : "TRADE_DATE",
-        "name" : "tradeDate",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "TO Code",
-        "sqliteName" : "TO_CODE",
-        "name" : "toCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "EP Code",
-        "sqliteName" : "EP_CODE",
-        "name" : "epCode",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "LOP A/C No",
-        "sqliteName" : "LOP_AC_NO",
-        "name" : "lopAcNo",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "A/C Type",
-        "sqliteName" : "AC_TYPE",
-        "name" : "acType",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "A/C Nature",
-        "sqliteName" : "AC_NATURE",
-        "name" : "acNature",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Product Code",
-        "sqliteName" : "PRODUCT_CODE",
-        "name" : "productCode",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Strike",
-        "sqliteName" : "STRIKE",
-        "name" : "strike",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Option Type",
-        "sqliteName" : "OPTION_TYPE",
-        "name" : "optionType",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Contract Month",
-        "sqliteName" : "CONTRACT_MONTH",
-        "name" : "contractMonth",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "LOP OI Long",
-        "sqliteName" : "LOP_OI_LONG",
-        "name" : "lopOiLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "LOP OI Short",
-        "sqliteName" : "LOP_OI_SHORT",
-        "name" : "lopOiShort",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "LOP PD",
-        "sqliteName" : "LOP_PD",
-        "name" : "lopPd",
-        "isNumber" : true,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts TP001_o_Position to Sqlite",
-    "csv" : {
-      "midfix" : ".tp001_o_position",
-      "format" : "raw",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "tp001_o_position.sqlite",
-      "tableName" : "tp001_o_position"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_tp001_o_position.xml"
-    },
-    "pojo" : {
-      "className" : "Tp001OPosition",
-      "props" : [ {
-        "csvName" : "Member",
-        "sqliteName" : "MEMBER",
-        "name" : "member",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Account No.",
-        "sqliteName" : "ACCOUNT_NO",
-        "name" : "accountNo",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Instrument",
-        "sqliteName" : "INSTRUMENT",
-        "name" : "instrument",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Member Name",
-        "sqliteName" : "MEMBER_NAME",
-        "name" : "memberName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Market",
-        "sqliteName" : "MARKET",
-        "name" : "market",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Market Name",
-        "sqliteName" : "MARKET_NAME",
-        "name" : "marketName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Underlying",
-        "sqliteName" : "UNDERLYING",
-        "name" : "underlying",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Underlying Name",
-        "sqliteName" : "UNDERLYING_NAME",
-        "name" : "underlyingName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Currency",
-        "sqliteName" : "CURRENCY",
-        "name" : "currency",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Prev Position - Long",
-        "sqliteName" : "PREV_POSITION_LONG",
-        "name" : "prevPositionLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Prev Position - Short",
-        "sqliteName" : "PREV_POSITION_SHORT",
-        "name" : "prevPositionShort",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Prev Settlement Price",
-        "sqliteName" : "PREV_SETTLEMENT_PRICE",
-        "name" : "prevSettlementPrice",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Current Position - Long",
-        "sqliteName" : "CURRENT_POSITION_LONG",
-        "name" : "currentPositionLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Current Position - Short",
-        "sqliteName" : "CURRENT_POSITION_SHORT",
-        "name" : "currentPositionShort",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Current Settlement Price",
-        "sqliteName" : "CURRENT_SETTLEMENT_PRICE",
-        "name" : "currentSettlementPrice",
-        "isNumber" : true,
-        "notNull" : false
-      } ]
-    }
-  }, {
-    "description" : "Converts TP001_f_Position to Sqlite",
-    "csv" : {
-      "midfix" : ".tp001_f_position",
-      "format" : "raw",
-      "delimiter" : ",",
-      "ignoreHeaderLine" : true
-    },
-    "sqlite" : {
-      "dbFile" : "tp001_f_position.sqlite",
-      "tableName" : "tp001_f_position"
-    },
-    "converter" : {
-      "fileName" : "hksqlgw_loader_tp001_f_position.xml"
-    },
-    "pojo" : {
-      "className" : "Tp001FPosition",
-      "props" : [ {
-        "csvName" : "Member",
-        "sqliteName" : "MEMBER",
-        "name" : "member",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Account No.",
-        "sqliteName" : "ACCOUNT_NO",
-        "name" : "accountNo",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Instrument",
-        "sqliteName" : "INSTRUMENT",
-        "name" : "instrument",
-        "isNumber" : false,
-        "notNull" : true
-      }, {
-        "csvName" : "Member Name",
-        "sqliteName" : "MEMBER_NAME",
-        "name" : "memberName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Market",
-        "sqliteName" : "MARKET",
-        "name" : "market",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Market Name",
-        "sqliteName" : "MARKET_NAME",
-        "name" : "marketName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Underlying",
-        "sqliteName" : "UNDERLYING",
-        "name" : "underlying",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Underlying Name",
-        "sqliteName" : "UNDERLYING_NAME",
-        "name" : "underlyingName",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Currency",
-        "sqliteName" : "CURRENCY",
-        "name" : "currency",
-        "isNumber" : false,
-        "notNull" : false
-      }, {
-        "csvName" : "Prev Position - Long",
-        "sqliteName" : "PREV_POSITION_LONG",
-        "name" : "prevPositionLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Prev Position - Short",
-        "sqliteName" : "PREV_POSITION_SHORT",
-        "name" : "prevPositionShort",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Prev Settlement Price",
-        "sqliteName" : "PREV_SETTLEMENT_PRICE",
-        "name" : "prevSettlementPrice",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Current Position - Long",
-        "sqliteName" : "CURRENT_POSITION_LONG",
-        "name" : "currentPositionLong",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Current Position - Short",
-        "sqliteName" : "CURRENT_POSITION_SHORT",
-        "name" : "currentPositionShort",
-        "isNumber" : true,
-        "notNull" : false
-      }, {
-        "csvName" : "Current Settlement Price",
-        "sqliteName" : "CURRENT_SETTLEMENT_PRICE",
-        "name" : "currentSettlementPrice",
-        "isNumber" : true,
-        "notNull" : false
+        "csvName" : "baseApi_trading_code_country_id_s",
+        "sqliteName" : "BASEAPI_TRADING_CODE_COUNTRY_ID_S",
+        "name" : "baseapiTradingCodeCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_trading_code_ex_customer_s",
+        "sqliteName" : "BASEAPI_TRADING_CODE_EX_CUSTOMER_S",
+        "name" : "baseapiTradingCodeExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_trading_code_user_id_s",
+        "sqliteName" : "BASEAPI_TRADING_CODE_USER_ID_S",
+        "name" : "baseapiTradingCodeUserIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_series_countryCode",
+        "sqliteName" : "BASEAPI_SERIES_COUNTRYCODE",
+        "name" : "baseapiSeriesCountrycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_marketCode",
+        "sqliteName" : "BASEAPI_SERIES_MARKETCODE",
+        "name" : "baseapiSeriesMarketcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_instrumentGroupId",
+        "sqliteName" : "BASEAPI_SERIES_INSTRUMENTGROUPID",
+        "name" : "baseapiSeriesInstrumentgroupid",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_modifier",
+        "sqliteName" : "BASEAPI_SERIES_MODIFIER",
+        "name" : "baseapiSeriesModifier",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_commodityCode",
+        "sqliteName" : "BASEAPI_SERIES_COMMODITYCODE",
+        "name" : "baseapiSeriesCommoditycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_strikePrice",
+        "sqliteName" : "BASEAPI_SERIES_STRIKEPRICE",
+        "name" : "baseapiSeriesStrikeprice",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_expirationDate",
+        "sqliteName" : "BASEAPI_SERIES_EXPIRATIONDATE",
+        "name" : "baseapiSeriesExpirationdate",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_series_seriesCodeString",
+        "sqliteName" : "BASEAPI_SERIES_SERIESCODESTRING",
+        "name" : "baseapiSeriesSeriescodestring",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_series_hashCode",
+        "sqliteName" : "BASEAPI_SERIES_HASHCODE",
+        "name" : "baseapiSeriesHashcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_give_up_member_country_id_s",
+        "sqliteName" : "BASEAPI_GIVE_UP_MEMBER_COUNTRY_ID_S",
+        "name" : "baseapiGiveUpMemberCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_give_up_member_ex_customer_s",
+        "sqliteName" : "BASEAPI_GIVE_UP_MEMBER_EX_CUSTOMER_S",
+        "name" : "baseapiGiveUpMemberExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_order_number_u",
+        "sqliteName" : "BASEAPI_ORDER_NUMBER_U",
+        "name" : "baseapiOrderNumberU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_sequence_number_i",
+        "sqliteName" : "BASEAPI_SEQUENCE_NUMBER_I",
+        "name" : "baseapiSequenceNumberI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_trade_number_i",
+        "sqliteName" : "BASEAPI_TRADE_NUMBER_I",
+        "name" : "baseapiTradeNumberI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_deal_price_i",
+        "sqliteName" : "BASEAPI_DEAL_PRICE_I",
+        "name" : "baseapiDealPriceI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_trade_quantity_i",
+        "sqliteName" : "BASEAPI_TRADE_QUANTITY_I",
+        "name" : "baseapiTradeQuantityI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_account_country_id_s",
+        "sqliteName" : "BASEAPI_ACCOUNT_COUNTRY_ID_S",
+        "name" : "baseapiAccountCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_account_ex_customer_s",
+        "sqliteName" : "BASEAPI_ACCOUNT_EX_CUSTOMER_S",
+        "name" : "baseapiAccountExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_account_account_id_s",
+        "sqliteName" : "BASEAPI_ACCOUNT_ACCOUNT_ID_S",
+        "name" : "baseapiAccountAccountIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_customer_info_s",
+        "sqliteName" : "BASEAPI_CUSTOMER_INFO_S",
+        "name" : "baseapiCustomerInfoS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_bought_or_sold_c",
+        "sqliteName" : "BASEAPI_BOUGHT_OR_SOLD_C",
+        "name" : "baseapiBoughtOrSoldC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_deal_source_c",
+        "sqliteName" : "BASEAPI_DEAL_SOURCE_C",
+        "name" : "baseapiDealSourceC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_open_close_req_c",
+        "sqliteName" : "BASEAPI_OPEN_CLOSE_REQ_C",
+        "name" : "baseapiOpenCloseReqC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_trade_type_c",
+        "sqliteName" : "BASEAPI_TRADE_TYPE_C",
+        "name" : "baseapiTradeTypeC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_le_state_c",
+        "sqliteName" : "BASEAPI_LE_STATE_C",
+        "name" : "baseapiLeStateC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_user_code_country_id_s",
+        "sqliteName" : "BASEAPI_USER_CODE_COUNTRY_ID_S",
+        "name" : "baseapiUserCodeCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_user_code_ex_customer_s",
+        "sqliteName" : "BASEAPI_USER_CODE_EX_CUSTOMER_S",
+        "name" : "baseapiUserCodeExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_user_code_user_id_s",
+        "sqliteName" : "BASEAPI_USER_CODE_USER_ID_S",
+        "name" : "baseapiUserCodeUserIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_created_date_s",
+        "sqliteName" : "BASEAPI_CREATED_DATE_S",
+        "name" : "baseapiCreatedDateS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_created_time_s",
+        "sqliteName" : "BASEAPI_CREATED_TIME_S",
+        "name" : "baseapiCreatedTimeS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_asof_date_s",
+        "sqliteName" : "BASEAPI_ASOF_DATE_S",
+        "name" : "baseapiAsofDateS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_asof_time_s",
+        "sqliteName" : "BASEAPI_ASOF_TIME_S",
+        "name" : "baseapiAsofTimeS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_modified_date_s",
+        "sqliteName" : "BASEAPI_MODIFIED_DATE_S",
+        "name" : "baseapiModifiedDateS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_modified_time_s",
+        "sqliteName" : "BASEAPI_MODIFIED_TIME_S",
+        "name" : "baseapiModifiedTimeS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_trade_state_c",
+        "sqliteName" : "BASEAPI_TRADE_STATE_C",
+        "name" : "baseapiTradeStateC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_attention_c",
+        "sqliteName" : "BASEAPI_ATTENTION_C",
+        "name" : "baseapiAttentionC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_deal_number_i",
+        "sqliteName" : "BASEAPI_DEAL_NUMBER_I",
+        "name" : "baseapiDealNumberI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_global_deal_no_u",
+        "sqliteName" : "BASEAPI_GLOBAL_DEAL_NO_U",
+        "name" : "baseapiGlobalDealNoU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_trade_number_i",
+        "sqliteName" : "BASEAPI_ORIG_TRADE_NUMBER_I",
+        "name" : "baseapiOrigTradeNumberI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_countryCode",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_COUNTRYCODE",
+        "name" : "baseapiOrigSeriesCountrycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_marketCode",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_MARKETCODE",
+        "name" : "baseapiOrigSeriesMarketcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_instrumentGroupId",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_INSTRUMENTGROUPID",
+        "name" : "baseapiOrigSeriesInstrumentgroupid",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_modifier",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_MODIFIER",
+        "name" : "baseapiOrigSeriesModifier",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_commodityCode",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_COMMODITYCODE",
+        "name" : "baseapiOrigSeriesCommoditycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_strikePrice",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_STRIKEPRICE",
+        "name" : "baseapiOrigSeriesStrikeprice",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_expirationDate",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_EXPIRATIONDATE",
+        "name" : "baseapiOrigSeriesExpirationdate",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_orig_series_seriesCodeString",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_SERIESCODESTRING",
+        "name" : "baseapiOrigSeriesSeriescodestring",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_orig_series_hashCode",
+        "sqliteName" : "BASEAPI_ORIG_SERIES_HASHCODE",
+        "name" : "baseapiOrigSeriesHashcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_hkex_exchange_info_exchange_info_s",
+        "sqliteName" : "BASEAPI_HKEX_EXCHANGE_INFO_EXCHANGE_INFO_S",
+        "name" : "baseapiHkexExchangeInfoExchangeInfoS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_big_attention_u",
+        "sqliteName" : "BASEAPI_BIG_ATTENTION_U",
+        "name" : "baseapiBigAttentionU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_clearing_date_s",
+        "sqliteName" : "BASEAPI_CLEARING_DATE_S",
+        "name" : "baseapiClearingDateS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_execution_timestamp_tvSec",
+        "sqliteName" : "BASEAPI_EXECUTION_TIMESTAMP_TVSEC",
+        "name" : "baseapiExecutionTimestampTvsec",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_execution_timestamp_tvNsec",
+        "sqliteName" : "BASEAPI_EXECUTION_TIMESTAMP_TVNSEC",
+        "name" : "baseapiExecutionTimestampTvnsec",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_trade_venue_c",
+        "sqliteName" : "BASEAPI_TRADE_VENUE_C",
+        "name" : "baseapiTradeVenueC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_instance_c",
+        "sqliteName" : "BASEAPI_INSTANCE_C",
+        "name" : "baseapiInstanceC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_exch_order_type_n",
+        "sqliteName" : "BASEAPI_EXCH_ORDER_TYPE_N",
+        "name" : "baseapiExchOrderTypeN",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_party_country_id_s",
+        "sqliteName" : "BASEAPI_PARTY_COUNTRY_ID_S",
+        "name" : "baseapiPartyCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_party_ex_customer_s",
+        "sqliteName" : "BASEAPI_PARTY_EX_CUSTOMER_S",
+        "name" : "baseapiPartyExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_trade_rep_code_n",
+        "sqliteName" : "BASEAPI_TRADE_REP_CODE_N",
+        "name" : "baseapiTradeRepCodeN",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_filler_2_s",
+        "sqliteName" : "BASEAPI_FILLER_2_S",
+        "name" : "baseapiFiller2S",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "baseApi_match_id_execution_event_nbr_u",
+        "sqliteName" : "BASEAPI_MATCH_ID_EXECUTION_EVENT_NBR_U",
+        "name" : "baseapiMatchIdExecutionEventNbrU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_match_id_match_group_nbr_u",
+        "sqliteName" : "BASEAPI_MATCH_ID_MATCH_GROUP_NBR_U",
+        "name" : "baseapiMatchIdMatchGroupNbrU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "baseApi_match_id_match_itenbr_u",
+        "sqliteName" : "BASEAPI_MATCH_ID_MATCH_ITENBR_U",
+        "name" : "baseapiMatchIdMatchItenbrU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_countersign_code_country_id_s",
+        "sqliteName" : "SECURPART_COUNTERSIGN_CODE_COUNTRY_ID_S",
+        "name" : "securpartCountersignCodeCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_countersign_code_ex_customer_s",
+        "sqliteName" : "SECURPART_COUNTERSIGN_CODE_EX_CUSTOMER_S",
+        "name" : "securpartCountersignCodeExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_countersign_code_user_id_s",
+        "sqliteName" : "SECURPART_COUNTERSIGN_CODE_USER_ID_S",
+        "name" : "securpartCountersignCodeUserIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_new_series_countryCode",
+        "sqliteName" : "SECURPART_NEW_SERIES_COUNTRYCODE",
+        "name" : "securpartNewSeriesCountrycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_marketCode",
+        "sqliteName" : "SECURPART_NEW_SERIES_MARKETCODE",
+        "name" : "securpartNewSeriesMarketcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_instrumentGroupId",
+        "sqliteName" : "SECURPART_NEW_SERIES_INSTRUMENTGROUPID",
+        "name" : "securpartNewSeriesInstrumentgroupid",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_modifier",
+        "sqliteName" : "SECURPART_NEW_SERIES_MODIFIER",
+        "name" : "securpartNewSeriesModifier",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_commodityCode",
+        "sqliteName" : "SECURPART_NEW_SERIES_COMMODITYCODE",
+        "name" : "securpartNewSeriesCommoditycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_strikePrice",
+        "sqliteName" : "SECURPART_NEW_SERIES_STRIKEPRICE",
+        "name" : "securpartNewSeriesStrikeprice",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_expirationDate",
+        "sqliteName" : "SECURPART_NEW_SERIES_EXPIRATIONDATE",
+        "name" : "securpartNewSeriesExpirationdate",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_new_series_seriesCodeString",
+        "sqliteName" : "SECURPART_NEW_SERIES_SERIESCODESTRING",
+        "name" : "securpartNewSeriesSeriescodestring",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_new_series_hashCode",
+        "sqliteName" : "SECURPART_NEW_SERIES_HASHCODE",
+        "name" : "securpartNewSeriesHashcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_party_country_id_s",
+        "sqliteName" : "SECURPART_PARTY_COUNTRY_ID_S",
+        "name" : "securpartPartyCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_party_ex_customer_s",
+        "sqliteName" : "SECURPART_PARTY_EX_CUSTOMER_S",
+        "name" : "securpartPartyExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_pos_account_country_id_s",
+        "sqliteName" : "SECURPART_POS_ACCOUNT_COUNTRY_ID_S",
+        "name" : "securpartPosAccountCountryIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_pos_account_ex_customer_s",
+        "sqliteName" : "SECURPART_POS_ACCOUNT_EX_CUSTOMER_S",
+        "name" : "securpartPosAccountExCustomerS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_pos_account_account_id_s",
+        "sqliteName" : "SECURPART_POS_ACCOUNT_ACCOUNT_ID_S",
+        "name" : "securpartPosAccountAccountIdS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_combo_series_countryCode",
+        "sqliteName" : "SECURPART_COMBO_SERIES_COUNTRYCODE",
+        "name" : "securpartComboSeriesCountrycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_marketCode",
+        "sqliteName" : "SECURPART_COMBO_SERIES_MARKETCODE",
+        "name" : "securpartComboSeriesMarketcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_instrumentGroupId",
+        "sqliteName" : "SECURPART_COMBO_SERIES_INSTRUMENTGROUPID",
+        "name" : "securpartComboSeriesInstrumentgroupid",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_modifier",
+        "sqliteName" : "SECURPART_COMBO_SERIES_MODIFIER",
+        "name" : "securpartComboSeriesModifier",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_commodityCode",
+        "sqliteName" : "SECURPART_COMBO_SERIES_COMMODITYCODE",
+        "name" : "securpartComboSeriesCommoditycode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_strikePrice",
+        "sqliteName" : "SECURPART_COMBO_SERIES_STRIKEPRICE",
+        "name" : "securpartComboSeriesStrikeprice",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_expirationDate",
+        "sqliteName" : "SECURPART_COMBO_SERIES_EXPIRATIONDATE",
+        "name" : "securpartComboSeriesExpirationdate",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_series_seriesCodeString",
+        "sqliteName" : "SECURPART_COMBO_SERIES_SERIESCODESTRING",
+        "name" : "securpartComboSeriesSeriescodestring",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_combo_series_hashCode",
+        "sqliteName" : "SECURPART_COMBO_SERIES_HASHCODE",
+        "name" : "securpartComboSeriesHashcode",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_nbr_held_q",
+        "sqliteName" : "SECURPART_NBR_HELD_Q",
+        "name" : "securpartNbrHeldQ",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_nbr_written_q",
+        "sqliteName" : "SECURPART_NBR_WRITTEN_Q",
+        "name" : "securpartNbrWrittenQ",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_total_held_q",
+        "sqliteName" : "SECURPART_TOTAL_HELD_Q",
+        "name" : "securpartTotalHeldQ",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_total_written_q",
+        "sqliteName" : "SECURPART_TOTAL_WRITTEN_Q",
+        "name" : "securpartTotalWrittenQ",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_ext_seq_nbr_i",
+        "sqliteName" : "SECURPART_EXT_SEQ_NBR_I",
+        "name" : "securpartExtSeqNbrI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_ext_status_i",
+        "sqliteName" : "SECURPART_EXT_STATUS_I",
+        "name" : "securpartExtStatusI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_requantity_i",
+        "sqliteName" : "SECURPART_REQUANTITY_I",
+        "name" : "securpartRequantityI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_quantity_i",
+        "sqliteName" : "SECURPART_QUANTITY_I",
+        "name" : "securpartQuantityI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_ext_trade_number_u",
+        "sqliteName" : "SECURPART_EXT_TRADE_NUMBER_U",
+        "name" : "securpartExtTradeNumberU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_orig_ext_trade_number_u",
+        "sqliteName" : "SECURPART_ORIG_EXT_TRADE_NUMBER_U",
+        "name" : "securpartOrigExtTradeNumberU",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_residual_i",
+        "sqliteName" : "SECURPART_RESIDUAL_I",
+        "name" : "securpartResidualI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_give_up_number_i",
+        "sqliteName" : "SECURPART_GIVE_UP_NUMBER_I",
+        "name" : "securpartGiveUpNumberI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_commission_i",
+        "sqliteName" : "SECURPART_COMMISSION_I",
+        "name" : "securpartCommissionI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_combo_deal_price_i",
+        "sqliteName" : "SECURPART_COMBO_DEAL_PRICE_I",
+        "name" : "securpartComboDealPriceI",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_clearing_date_s",
+        "sqliteName" : "SECURPART_CLEARING_DATE_S",
+        "name" : "securpartClearingDateS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_passthrough_s",
+        "sqliteName" : "SECURPART_PASSTHROUGH_S",
+        "name" : "securpartPassthroughS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_ex_client_s",
+        "sqliteName" : "SECURPART_EX_CLIENT_S",
+        "name" : "securpartExClientS",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_ext_trade_fee_type_c",
+        "sqliteName" : "SECURPART_EXT_TRADE_FEE_TYPE_C",
+        "name" : "securpartExtTradeFeeTypeC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_give_up_state_c",
+        "sqliteName" : "SECURPART_GIVE_UP_STATE_C",
+        "name" : "securpartGiveUpStateC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_reserved_2_s",
+        "sqliteName" : "SECURPART_RESERVED_2_S",
+        "name" : "securpartReserved2S",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : false
+      }, {
+        "csvName" : "securPart_orig_trade_type_c",
+        "sqliteName" : "SECURPART_ORIG_TRADE_TYPE_C",
+        "name" : "securpartOrigTradeTypeC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_open_close_c",
+        "sqliteName" : "SECURPART_OPEN_CLOSE_C",
+        "name" : "securpartOpenCloseC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_reserved_1_c",
+        "sqliteName" : "SECURPART_RESERVED_1_C",
+        "name" : "securpartReserved1C",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_account_type_c",
+        "sqliteName" : "SECURPART_ACCOUNT_TYPE_C",
+        "name" : "securpartAccountTypeC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_instigant_c",
+        "sqliteName" : "SECURPART_INSTIGANT_C",
+        "name" : "securpartInstigantC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
+      }, {
+        "csvName" : "securPart_cab_price_ind_c",
+        "sqliteName" : "SECURPART_CAB_PRICE_IND_C",
+        "name" : "securpartCabPriceIndC",
+        "notNull" : false,
+        "double" : false,
+        "int" : false,
+        "long" : true
       } ]
     }
   } ]

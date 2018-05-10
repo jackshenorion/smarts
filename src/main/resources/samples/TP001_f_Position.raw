@@ -1,1 +1,1 @@
-Member:n,Account No.:n,Instrument:n,Member Name,Market,Market Name,Underlying,Underlying Name,Currency,Prev Position - Long:d,Prev Position - Short:d,Prev Settlement Price:d,Current Position - Long:d,Current Position - Short:d,Current Settlement Price:d
+Member:n,Account No.:n,Instrument:n,Member Name,Market,Market Name,Underlying,Underlying Name,Currency,Prev Position - Long:L,Prev Position - Short:L,Prev Settlement Price:d,Current Position - Long:L,Current Position - Short:L,Current Settlement Price:d
